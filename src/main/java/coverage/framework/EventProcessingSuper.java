@@ -3,6 +3,7 @@ package coverage.framework;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 import io.vertx.core.json.JsonObject;
+import java.lang.Void;
 import java.util.Optional;
 import javax.ws.rs.NotFoundException;
 
@@ -41,6 +42,14 @@ public class EventProcessingSuper {
           .transformToUni(
             item -> {
               return Uni.createFrom().completionStage(msg.ack());
+            }
+          )
+          .onFailure()
+          .recoverWithItem(
+            err -> {
+              // needs to go in dead letter queue
+              msg.ack();
+              return null;
             }
           );
       default:
