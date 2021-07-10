@@ -3,8 +3,7 @@ package coverage;
 import coverage.framework.EntityInterface;
 import coverage.framework.EntitySuper;
 import coverage.framework.TalentRole;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class Talent extends EntitySuper {
 
@@ -14,7 +13,7 @@ public class Talent extends EntitySuper {
   public String state;
   public String zip;
   public TalentRole role;
-  public List<String> accountIds = new ArrayList<>();
+  public Set<String> accountIds = Set.of();
 
   public <T extends EntityInterface> void updateFields(T updates) {
     Talent a = (Talent) updates;
@@ -24,11 +23,15 @@ public class Talent extends EntitySuper {
     this.state = a.state;
     this.zip = a.zip;
     this.role = a.role;
-    this.accountIds = List.copyOf(a.accountIds);
+    this.accountIds = Set.copyOf(a.accountIds);
     return;
   }
 
   public void assignAccount(String accountId) {
     accountIds.add(accountId);
+  }
+
+  public void unassignAccount(String accountId) {
+    accountIds.remove(accountId);
   }
 }

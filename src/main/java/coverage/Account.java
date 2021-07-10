@@ -2,8 +2,12 @@ package coverage;
 
 import coverage.framework.EntityInterface;
 import coverage.framework.EntitySuper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Account extends EntitySuper {
+
+  final Logger logger = LoggerFactory.getLogger(Account.class);
 
   public String name;
   public String address;
