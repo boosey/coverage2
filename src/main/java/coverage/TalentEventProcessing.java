@@ -1,5 +1,6 @@
 package coverage;
 
+import coverage.framework.AssignRelationFunction;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 import io.vertx.core.json.JsonObject;
@@ -14,24 +15,52 @@ public class TalentEventProcessing {
   @Inject
   Logger log;
 
+  @Inject
+  Configuration config;
+
   @Incoming("account-event")
   public Uni<Void> consumeAccountEvent(
     KafkaRecord<JsonObject, JsonObject> msg
   ) {
+    AssignRelationFunction assign = (talent, account) -> {
+      Talent t = (Talent) talent;
+      Account a = (Account) account;
+      t.assignAccount(a.id.toString());
+      return null;
+    };
+
+    AssignRelationFunction unassign = (talent, account) -> {
+      Talent t = (Talent) talent;
+      Account a = (Account) account;
+      t.unassignAccount(a.id.toString());
+      return null;
+    };
+
     log.info("processing account-event: " + msg.getTopic());
     JsonObject p = msg.getPayload();
-    switch (p.getString("event")) {
-      case "btcManager-assigned":
-        log.info("processing btcManager-assigned");
-        return processAccountTalentRelationshipFormed(msg);
-      case "btcManager-unassigned":
-      // return processAccountTalentRelationship(msg, unassign);
+    String event = p.getString("event");
+
+    if (event.equals(config.event().btcManagerAssigned())) {
+      return processAccountTalentRelationshipChanged(msg, assign);
+    } else if (event.equals(config.event().btcManagerUnassigned())) {
+      return processAccountTalentRelationshipChanged(msg, unassign);
+    } else if (event.equals(config.event().designManagerAssigned())) {
+      return processAccountTalentRelationshipChanged(msg, assign);
+    } else if (event.equals(config.event().designManagerUnassigned())) {
+      return processAccountTalentRelationshipChanged(msg, unassign);
+    } else if (event.equals(config.event().squadManagerAssigned())) {
+      return processAccountTalentRelationshipChanged(msg, assign);
+    } else if (event.equals(config.event().squadManagerUnassigned())) {
+      return processAccountTalentRelationshipChanged(msg, unassign);
     }
+
+    // Put in dead letter queue
     return Uni.createFrom().completionStage(msg.ack());
   }
 
-  public Uni<Void> processAccountTalentRelationshipFormed(
-    KafkaRecord<JsonObject, JsonObject> msg
+  public Uni<Void> processAccountTalentRelationshipChanged(
+    KafkaRecord<JsonObject, JsonObject> msg,
+    AssignRelationFunction change
   ) {
     JsonObject p = msg.getPayload();
 
@@ -78,7 +107,8 @@ public class TalentEventProcessing {
         tuple -> {
           Talent t = tuple.getItem1();
           Account a = tuple.getItem2();
-          t.assignAccount(a.id.toString());
+          change.relation(t, a);
+          // t.assignAccount(a.id.toString());
           return t.update();
         }
       )

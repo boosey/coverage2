@@ -31,6 +31,9 @@ public class AccountService extends ServiceSuper implements ServiceInterface {
   Emitter<JsonObject> eventEmitter;
 
   @Inject
+  Configuration config;
+
+  @Inject
   Logger log;
 
   AccountService() {
@@ -61,21 +64,23 @@ public class AccountService extends ServiceSuper implements ServiceInterface {
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    final String assignedEventName = "btcManager-assigned";
-    final String unassignedEventName = "btcManager-unassigned";
-
     AssignRelationFunction assign = (account, talent) -> {
       String prevId = ((Account) account).btcManagerId;
-      ((Account) account).btcManagerId = ((Talent) talent).id.toString();
-      return prevId;
+      String newId = ((Talent) talent).id.toString();
+      if (newId.equals(prevId)) {
+        return null;
+      } else {
+        ((Account) account).btcManagerId = newId;
+        return prevId;
+      }
     };
 
     return assignTalent(
       accountId,
       talentId,
       assign,
-      assignedEventName,
-      unassignedEventName
+      config.event().btcManagerAssigned(),
+      config.event().btcManagerUnassigned()
     );
   }
 
@@ -85,21 +90,23 @@ public class AccountService extends ServiceSuper implements ServiceInterface {
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    final String assignedEventName = "designManager-assigned";
-    final String unassignedEventName = "designManager-unassigned";
-
     AssignRelationFunction assign = (account, talent) -> {
       String prevId = ((Account) account).designManagerId;
-      ((Account) account).designManagerId = ((Talent) talent).id.toString();
-      return prevId;
+      String newId = ((Talent) talent).id.toString();
+      if (newId.equals(prevId)) {
+        return null;
+      } else {
+        ((Account) account).designManagerId = newId;
+        return prevId;
+      }
     };
 
     return assignTalent(
       accountId,
       talentId,
       assign,
-      assignedEventName,
-      unassignedEventName
+      config.event().designManagerAssigned(),
+      config.event().designManagerUnassigned()
     );
   }
 
@@ -109,21 +116,23 @@ public class AccountService extends ServiceSuper implements ServiceInterface {
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    final String assignedEventName = "squadManager-assigned";
-    final String unassignedEventName = "squadManager-unassigned";
-
     AssignRelationFunction assign = (account, talent) -> {
       String prevId = ((Account) account).squadManagerId;
-      ((Account) account).squadManagerId = ((Talent) talent).id.toString();
-      return prevId;
+      String newId = ((Talent) talent).id.toString();
+      if (newId.equals(prevId)) {
+        return null;
+      } else {
+        ((Account) account).squadManagerId = newId;
+        return prevId;
+      }
     };
 
     return assignTalent(
       accountId,
       talentId,
       assign,
-      assignedEventName,
-      unassignedEventName
+      config.event().squadManagerAssigned(),
+      config.event().squadManagerUnassigned()
     );
   }
 
