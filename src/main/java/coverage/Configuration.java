@@ -13,5 +13,14 @@ public interface Configuration {
     String designManagerUnassigned();
     String squadManagerAssigned();
     String squadManagerUnassigned();
+
+    Property property();
+
+    public interface Property {
+      String name();
+      String parentId();
+      String accountId();
+      String talentId();
+    }
   }
 }

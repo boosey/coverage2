@@ -38,7 +38,7 @@ public class TalentEventProcessing {
 
     log.info("processing account-event: " + msg.getTopic());
     JsonObject p = msg.getPayload();
-    String event = p.getString("event");
+    String event = p.getString(config.event().property().name());
 
     if (event.equals(config.event().btcManagerAssigned())) {
       return processAccountTalentRelationshipChanged(msg, assign);
@@ -68,9 +68,11 @@ public class TalentEventProcessing {
       .combine()
       .all()
       .unis(
-        Talent.<Talent>findByIdOptional(new ObjectId(p.getString("talentId"))),
+        Talent.<Talent>findByIdOptional(
+          new ObjectId(p.getString(config.event().property().talentId()))
+        ),
         Account.<Account>findByIdOptional(
-          new ObjectId(p.getString("accountId"))
+          new ObjectId(p.getString(config.event().property().parentId()))
         )
       )
       .asTuple()
@@ -108,7 +110,6 @@ public class TalentEventProcessing {
           Talent t = tuple.getItem1();
           Account a = tuple.getItem2();
           change.relation(t, a);
-          // t.assignAccount(a.id.toString());
           return t.update();
         }
       )
