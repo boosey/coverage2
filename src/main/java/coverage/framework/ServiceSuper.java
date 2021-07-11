@@ -120,11 +120,4 @@ public class ServiceSuper implements ServiceSuperInterface {
       "A ServiceSuper sublcass must implement this method"
     );
   }
-  // public <P extends EntitySuper, C extends EntitySuper> Uni<Response> assignRelation(
-  //   Uni<Optional<P>> parent,
-  //   Uni<Optional<C>> child,
-  //   AssignRelationFunction assign
-  // ) {
-  //   return delegate.assignRelation(parent, child, assign);
-  // }
 }

@@ -21,13 +21,13 @@ import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 import org.jboss.logging.Logger;
 
-@Path("/accounts")
-public class AccountService
+@Path("/engagements")
+public class EngagementService
   extends ServiceSuper
-  implements ServiceInterface, AssignTalent<Account, Talent> {
+  implements ServiceInterface, AssignTalent<Engagement, Talent> {
 
   @Inject
-  @Channel("account-event-emitter")
+  @Channel("engagement-event-emitter")
   Emitter<JsonObject> eventEmitter;
 
   @Inject
@@ -36,107 +36,103 @@ public class AccountService
   @Inject
   Logger log;
 
-  AccountService() {
+  EngagementService() {
     super(
-      () -> Account.listAll(),
-      id -> Account.findByIdOptional(id),
-      () -> Account.deleteAll(),
-      id -> Account.deleteById(id)
+      () -> Engagement.listAll(),
+      id -> Engagement.findByIdOptional(id),
+      () -> Engagement.deleteAll(),
+      id -> Engagement.deleteById(id)
     );
   }
 
   @POST
   @Consumes(MediaType.APPLICATION_JSON)
-  public Uni<Response> add(Account a, @Context UriInfo uriInfo) {
+  public Uni<Response> add(Engagement a, @Context UriInfo uriInfo) {
     return this.addEntity(a, uriInfo);
   }
 
   @PUT
   @Path("/{id}")
   @Consumes(MediaType.APPLICATION_JSON)
-  public Uni<Response> update(String id, Account updates) {
+  public Uni<Response> update(String id, Engagement updates) {
     return this.updateEntity(id, updates);
   }
 
   @POST
-  @Path("/{accountId}/btcManager/{talentId}")
-  public Uni<Response> assignBTCManager(
-    @PathParam("accountId") String accountId,
+  @Path("/{engagementId}/engagementManager/{talentId}")
+  public Uni<Response> assignEngagementManager(
+    @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (account, talent) -> {
-      String prevId = ((Account) account).btcManagerId;
+    AssignRelationFunction assign = (engagement, talent) -> {
+      String prevId = ((Engagement) engagement).engagementManagerId;
       String newId = ((Talent) talent).id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Account) account).btcManagerId = newId;
+        ((Engagement) engagement).engagementManagerId = newId;
         return prevId;
       }
     };
 
     return assignTalentMixin(
-      Account.findByIdOptional(new ObjectId(accountId)),
+      Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
-      config.event().accountBtcManagerAssigned(),
-      config.event().accountBtcManagerUnassigned(),
+      config.event().engagementManagerAssigned(),
+      config.event().engagementManagerUnassigned(),
       eventEmitter,
       config
     );
   }
 
   @POST
-  @Path("/{accountId}/designManager/{talentId}")
-  public Uni<Response> assignDesignManager(
-    @PathParam("accountId") String accountId,
+  @Path("/{engagementId}/engagementLeader/{talentId}")
+  public Uni<Response> assignEngagementLeader(
+    @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (account, talent) -> {
-      String prevId = ((Account) account).designManagerId;
+    AssignRelationFunction assign = (engagement, talent) -> {
+      String prevId = ((Engagement) engagement).engagementLeaderId;
       String newId = ((Talent) talent).id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Account) account).designManagerId = newId;
+        ((Engagement) engagement).engagementLeaderId = newId;
         return prevId;
       }
     };
 
     return assignTalentMixin(
-      Account.findByIdOptional(new ObjectId(accountId)),
+      Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
-      config.event().accountDesignManagerAssigned(),
-      config.event().accountDesignManagerUnassigned(),
+      config.event().engagementLeaderAssigned(),
+      config.event().engagementLeaderUnassigned(),
       eventEmitter,
       config
     );
   }
 
   @POST
-  @Path("/{accountId}/squadManager/{talentId}")
-  public Uni<Response> assignSquadManager(
-    @PathParam("accountId") String accountId,
+  @Path("/{engagementId}/talent/{talentId}")
+  public Uni<Response> assignTalent(
+    @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (account, talent) -> {
-      String prevId = ((Account) account).squadManagerId;
+    AssignRelationFunction assign = (engagement, talent) -> {
       String newId = ((Talent) talent).id.toString();
-      if (newId.equals(prevId)) {
-        return null;
-      } else {
-        ((Account) account).squadManagerId = newId;
-        return prevId;
-      }
+
+      ((Engagement) engagement).assignTalent(newId);
+      return null;
     };
 
     return assignTalentMixin(
-      Account.findByIdOptional(new ObjectId(accountId)),
+      Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
-      config.event().accountSquadManagerAssigned(),
-      config.event().accountSquadManagerUnassigned(),
+      config.event().engagementTalentAssigned(),
+      config.event().engagementTalentUnassigned(),
       eventEmitter,
       config
     );

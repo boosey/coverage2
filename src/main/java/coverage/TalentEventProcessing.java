@@ -4,6 +4,7 @@ import coverage.framework.AssignRelationFunction;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 import io.vertx.core.json.JsonObject;
+import java.util.Set;
 import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 import org.bson.types.ObjectId;
@@ -39,20 +40,36 @@ public class TalentEventProcessing {
     log.info("processing account-event: " + msg.getTopic());
     JsonObject p = msg.getPayload();
     String event = p.getString(config.event().property().name());
+    Set<String> talentAssignedEvents = Set.of(
+      config.event().accountBtcManagerAssigned(),
+      config.event().accountSquadManagerAssigned(),
+      config.event().accountDesignManagerAssigned()
+    );
+    Set<String> talentUnassignedEvents = Set.of(
+      config.event().accountBtcManagerUnassigned(),
+      config.event().accountSquadManagerUnassigned(),
+      config.event().accountDesignManagerUnassigned()
+    );
 
-    if (event.equals(config.event().btcManagerAssigned())) {
+    if (talentAssignedEvents.contains(event)) {
       return processAccountTalentRelationshipChanged(msg, assign);
-    } else if (event.equals(config.event().btcManagerUnassigned())) {
-      return processAccountTalentRelationshipChanged(msg, unassign);
-    } else if (event.equals(config.event().designManagerAssigned())) {
-      return processAccountTalentRelationshipChanged(msg, assign);
-    } else if (event.equals(config.event().designManagerUnassigned())) {
-      return processAccountTalentRelationshipChanged(msg, unassign);
-    } else if (event.equals(config.event().squadManagerAssigned())) {
-      return processAccountTalentRelationshipChanged(msg, assign);
-    } else if (event.equals(config.event().squadManagerUnassigned())) {
+    } else if (talentUnassignedEvents.contains(event)) {
       return processAccountTalentRelationshipChanged(msg, unassign);
     }
+
+    // if (event.equals(config.event().accountBtcManagerAssigned())) {
+    //   return processAccountTalentRelationshipChanged(msg, assign);
+    // } else if (event.equals(config.event().accountBtcManagerAssigned())) {
+    //   return processAccountTalentRelationshipChanged(msg, unassign);
+    // } else if (event.equals(config.event().accountDesignManagerAssigned())) {
+    //   return processAccountTalentRelationshipChanged(msg, assign);
+    // } else if (event.equals(config.event().accountDesignManagerUnassigned())) {
+    //   return processAccountTalentRelationshipChanged(msg, unassign);
+    // } else if (event.equals(config.event().accountSquadManagerAssigned())) {
+    //   return processAccountTalentRelationshipChanged(msg, assign);
+    // } else if (event.equals(config.event().accountSquadManagerUnassigned())) {
+    //   return processAccountTalentRelationshipChanged(msg, unassign);
+    // }
 
     // Put in dead letter queue
     return Uni.createFrom().completionStage(msg.ack());

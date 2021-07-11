@@ -10,16 +10,24 @@ public class Engagement extends EntitySuper {
   public String description;
   public String engagementManagerId;
   public String engagementLeaderId;
-  public Set<String> talent = Set.of();
+  public Set<String> talentIds = Set.of();
 
   public <T extends EntityInterface> void updateFields(T updates) {
     Engagement e = (Engagement) updates;
     this.name = e.name;
-
+    this.description = e.description;
     this.engagementManagerId = e.engagementManagerId;
     this.engagementLeaderId = e.engagementLeaderId;
-    this.talent = Set.copyOf(e.talent);
+    this.talentIds = Set.copyOf(e.talentIds);
 
     return;
+  }
+
+  public void assignTalent(String accountId) {
+    talentIds.add(accountId);
+  }
+
+  public void unassignTalent(String accountId) {
+    talentIds.remove(accountId);
   }
 }

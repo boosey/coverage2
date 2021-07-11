@@ -13,6 +13,7 @@ public class Talent extends EntitySuper {
   public String state;
   public String zip;
   public TalentRole role;
+  public String managerId;
   public Set<String> accountIds = Set.of();
 
   public <T extends EntityInterface> void updateFields(T updates) {
@@ -23,6 +24,7 @@ public class Talent extends EntitySuper {
     this.state = a.state;
     this.zip = a.zip;
     this.role = a.role;
+    this.managerId = a.managerId;
     this.accountIds = Set.copyOf(a.accountIds);
     return;
   }
