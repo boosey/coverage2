@@ -39,13 +39,13 @@ public class AccountService
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    FormRelationFunction assign = (account, talent) -> {
-      String prevId = ((Account) account).btcManagerId;
-      String newId = ((Talent) talent).id.toString();
+    FormRelationFunction<Account, Talent> formRelationship = (account, talent) -> {
+      String prevId = account.btcManagerId;
+      String newId = talent.id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Account) account).btcManagerId = newId;
+        account.btcManagerId = newId;
         return prevId;
       }
     };
@@ -53,7 +53,7 @@ public class AccountService
     return assignTalent(
       Account.findByIdOptional(new ObjectId(accountId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
-      assign,
+      formRelationship,
       config.event().accountBtcManagerAssigned(),
       config.event().accountBtcManagerUnassigned()
     );
@@ -65,13 +65,13 @@ public class AccountService
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    FormRelationFunction assign = (account, talent) -> {
-      String prevId = ((Account) account).designManagerId;
-      String newId = ((Talent) talent).id.toString();
+    FormRelationFunction<Account, Talent> formRelationship = (account, talent) -> {
+      String prevId = account.designManagerId;
+      String newId = talent.id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Account) account).designManagerId = newId;
+        account.designManagerId = newId;
         return prevId;
       }
     };
@@ -79,7 +79,7 @@ public class AccountService
     return assignTalent(
       Account.findByIdOptional(new ObjectId(accountId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
-      assign,
+      formRelationship,
       config.event().accountDesignManagerAssigned(),
       config.event().accountDesignManagerUnassigned()
     );
@@ -91,13 +91,13 @@ public class AccountService
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    FormRelationFunction assign = (account, talent) -> {
-      String prevId = ((Account) account).squadManagerId;
-      String newId = ((Talent) talent).id.toString();
+    FormRelationFunction<Account, Talent> formRelationship = (account, talent) -> {
+      String prevId = account.squadManagerId;
+      String newId = talent.id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Account) account).squadManagerId = newId;
+        account.squadManagerId = newId;
         return prevId;
       }
     };
@@ -105,7 +105,7 @@ public class AccountService
     return assignTalent(
       Account.findByIdOptional(new ObjectId(accountId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
-      assign,
+      formRelationship,
       config.event().accountSquadManagerAssigned(),
       config.event().accountSquadManagerUnassigned()
     );

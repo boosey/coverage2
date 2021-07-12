@@ -40,13 +40,13 @@ public class EngagementService
     @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    FormRelationFunction assign = (engagement, talent) -> {
-      String prevId = ((Engagement) engagement).engagementManagerId;
-      String newId = ((Talent) talent).id.toString();
+    FormRelationFunction<Engagement, Talent> form = (engagement, talent) -> {
+      String prevId = engagement.engagementManagerId;
+      String newId = talent.id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Engagement) engagement).engagementManagerId = newId;
+        engagement.engagementManagerId = newId;
         return prevId;
       }
     };
@@ -54,7 +54,7 @@ public class EngagementService
     return assignTalent(
       Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
-      assign,
+      form,
       config.event().engagementManagerAssigned(),
       config.event().engagementManagerUnassigned()
     );
@@ -66,13 +66,13 @@ public class EngagementService
     @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    FormRelationFunction assign = (engagement, talent) -> {
-      String prevId = ((Engagement) engagement).engagementLeaderId;
-      String newId = ((Talent) talent).id.toString();
+    FormRelationFunction<Engagement, Talent> form = (engagement, talent) -> {
+      String prevId = engagement.engagementLeaderId;
+      String newId = talent.id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Engagement) engagement).engagementLeaderId = newId;
+        engagement.engagementLeaderId = newId;
         return prevId;
       }
     };
@@ -80,7 +80,7 @@ public class EngagementService
     return assignTalent(
       Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
-      assign,
+      form,
       config.event().engagementLeaderAssigned(),
       config.event().engagementLeaderUnassigned()
     );
@@ -92,17 +92,17 @@ public class EngagementService
     @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    FormRelationFunction assign = (engagement, talent) -> {
-      String newId = ((Talent) talent).id.toString();
+    FormRelationFunction<Engagement, Talent> form = (engagement, talent) -> {
+      String newId = talent.id.toString();
 
-      ((Engagement) engagement).assignTalent(newId);
+      engagement.assignTalent(newId);
       return null;
     };
 
     return assignTalent(
       Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
-      assign,
+      form,
       config.event().engagementTalentAssigned(),
       config.event().engagementTalentUnassigned()
     );

@@ -24,16 +24,16 @@ public class TalentEventProcessing {
   public Uni<Void> consumeAccountEvent(
     KafkaRecord<JsonObject, JsonObject> msg
   ) {
-    FormRelationFunction assign = (talent, account) -> {
-      Talent t = (Talent) talent;
-      Account a = (Account) account;
+    FormRelationFunction<Talent, Account> form = (talent, account) -> {
+      Talent t = talent;
+      Account a = account;
       t.assignAccount(a.id.toString());
       return null;
     };
 
-    FormRelationFunction unassign = (talent, account) -> {
-      Talent t = (Talent) talent;
-      Account a = (Account) account;
+    FormRelationFunction<Talent, Account> dissolve = (talent, account) -> {
+      Talent t = talent;
+      Account a = account;
       t.unassignAccount(a.id.toString());
       return null;
     };
@@ -53,24 +53,10 @@ public class TalentEventProcessing {
     );
 
     if (talentAssignedEvents.contains(event)) {
-      return processAccountTalentRelationshipChanged(msg, assign);
+      return processAccountTalentRelationshipChanged(msg, form);
     } else if (talentUnassignedEvents.contains(event)) {
-      return processAccountTalentRelationshipChanged(msg, unassign);
+      return processAccountTalentRelationshipChanged(msg, dissolve);
     }
-
-    // if (event.equals(config.event().accountBtcManagerAssigned())) {
-    //   return processAccountTalentRelationshipChanged(msg, assign);
-    // } else if (event.equals(config.event().accountBtcManagerAssigned())) {
-    //   return processAccountTalentRelationshipChanged(msg, unassign);
-    // } else if (event.equals(config.event().accountDesignManagerAssigned())) {
-    //   return processAccountTalentRelationshipChanged(msg, assign);
-    // } else if (event.equals(config.event().accountDesignManagerUnassigned())) {
-    //   return processAccountTalentRelationshipChanged(msg, unassign);
-    // } else if (event.equals(config.event().accountSquadManagerAssigned())) {
-    //   return processAccountTalentRelationshipChanged(msg, assign);
-    // } else if (event.equals(config.event().accountSquadManagerUnassigned())) {
-    //   return processAccountTalentRelationshipChanged(msg, unassign);
-    // }
 
     // Put in dead letter queue
     return Uni.createFrom().completionStage(msg.ack());
@@ -78,7 +64,7 @@ public class TalentEventProcessing {
 
   public Uni<Void> processAccountTalentRelationshipChanged(
     KafkaRecord<JsonObject, JsonObject> msg,
-    FormRelationFunction change
+    FormRelationFunction<Talent, Account> change
   ) {
     JsonObject p = msg.getPayload();
 

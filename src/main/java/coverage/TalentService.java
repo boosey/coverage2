@@ -39,13 +39,13 @@ public class TalentService
     @PathParam("talentId") String talentId,
     @PathParam("managerId") String managerId
   ) {
-    FormRelationFunction assign = (talent, manager) -> {
-      String prevId = ((Talent) talent).managerId;
-      String newId = ((Talent) manager).id.toString();
+    FormRelationFunction<Talent, Talent> form = (talent, manager) -> {
+      String prevId = talent.managerId;
+      String newId = manager.id.toString();
       if (newId.equals(prevId)) {
         return null;
       } else {
-        ((Talent) talent).managerId = newId;
+        talent.managerId = newId;
         return prevId;
       }
     };
@@ -53,7 +53,7 @@ public class TalentService
     return assignTalent(
       Talent.findByIdOptional(new ObjectId(talentId)),
       Talent.findByIdOptional(new ObjectId(managerId)),
-      assign,
+      form,
       config.event().talentManagerAssigned(),
       config.event().talentManagerUnassigned()
     );

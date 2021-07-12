@@ -17,7 +17,7 @@ public interface FormRelationMixin<P extends EntitySuper, C extends EntitySuper>
   public default Uni<Response> assignTalent(
     Uni<Optional<P>> parentUni,
     Uni<Optional<C>> childUni,
-    FormRelationFunction form,
+    FormRelationFunction<P, C> form,
     String assignedEventName,
     String unassignedEventName
   ) {
