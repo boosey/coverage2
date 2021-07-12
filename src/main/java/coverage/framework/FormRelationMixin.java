@@ -1,6 +1,6 @@
 package coverage.framework;
 
-import coverage.Configuration;
+import coverage.framework.functionalinterfaces.FormRelationFunction;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
 import java.util.Optional;

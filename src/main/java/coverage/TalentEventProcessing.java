@@ -1,6 +1,7 @@
 package coverage;
 
-import coverage.framework.FormRelationFunction;
+import coverage.framework.Configuration;
+import coverage.framework.functionalinterfaces.FormRelationFunction;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 import io.vertx.core.json.JsonObject;

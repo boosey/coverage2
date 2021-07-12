@@ -1,6 +1,9 @@
 package coverage.framework;
 
-import coverage.Configuration;
+import coverage.framework.functionalinterfaces.DeleteAllUniFunction;
+import coverage.framework.functionalinterfaces.DeleteByIdUniFunction;
+import coverage.framework.functionalinterfaces.FindByIdOptionalUniFunction;
+import coverage.framework.functionalinterfaces.ListAllUniFunction;
 import io.vertx.core.json.JsonObject;
 import javax.inject.Inject;
 import org.eclipse.microprofile.reactive.messaging.Emitter;

@@ -1,5 +1,6 @@
-package coverage.framework;
+package coverage.framework.functionalinterfaces;
 
+import coverage.framework.EntitySuper;
 import io.smallrye.mutiny.Uni;
 import java.util.List;
 

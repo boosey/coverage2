@@ -1,4 +1,4 @@
-package coverage.framework;
+package coverage.framework.functionalinterfaces;
 
 import io.smallrye.mutiny.Uni;
 import org.bson.types.ObjectId;

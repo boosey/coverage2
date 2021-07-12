@@ -1,9 +1,9 @@
 package coverage;
 
 import coverage.framework.BaseServiceMixin;
-import coverage.framework.FormRelationFunction;
 import coverage.framework.FormRelationMixin;
 import coverage.framework.ServiceSuper;
+import coverage.framework.functionalinterfaces.FormRelationFunction;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
 import javax.inject.Singleton;
