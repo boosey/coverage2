@@ -1,4 +1,4 @@
-package coverage.framework;
+package coverage;
 
 public enum TalentRole {
   SquadManager,

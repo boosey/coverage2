@@ -7,6 +7,11 @@ public interface Configuration {
   Event event();
 
   public interface Event {
+    String entityCreated();
+    String entityUpdated();
+    String entityDeleted();
+    String entityDeletedAll();
+
     String accountBtcManagerAssigned();
     String accountBtcManagerUnassigned();
     String accountDesignManagerAssigned();

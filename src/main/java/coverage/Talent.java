@@ -2,7 +2,6 @@ package coverage;
 
 import coverage.framework.EntityInterface;
 import coverage.framework.EntitySuper;
-import coverage.framework.TalentRole;
 import java.util.Set;
 
 public class Talent extends EntitySuper {

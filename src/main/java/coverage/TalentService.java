@@ -2,20 +2,15 @@ package coverage;
 
 import coverage.framework.AssignRelationFunction;
 import coverage.framework.AssignTalent;
-import coverage.framework.ServiceInterface;
+import coverage.framework.ServiceMixin;
 import coverage.framework.ServiceSuper;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriInfo;
 import org.bson.types.ObjectId;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
@@ -23,14 +18,11 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 @Path("/talent")
 public class TalentService
   extends ServiceSuper
-  implements ServiceInterface, AssignTalent<Talent, Talent> {
+  implements ServiceMixin<Talent>, AssignTalent<Talent, Talent> {
 
   @Inject
   @Channel("talent-event-emitter")
   Emitter<JsonObject> eventEmitter;
-
-  @Inject
-  Configuration config;
 
   TalentService() {
     super(
@@ -39,19 +31,7 @@ public class TalentService
       () -> Talent.deleteAll(),
       id -> Talent.deleteById(id)
     );
-  }
-
-  @POST
-  @Consumes(MediaType.APPLICATION_JSON)
-  public Uni<Response> add(Talent a, @Context UriInfo uriInfo) {
-    return this.addEntity(a, uriInfo);
-  }
-
-  @PUT
-  @Path("/{id}")
-  @Consumes(MediaType.APPLICATION_JSON)
-  public Uni<Response> update(String id, Talent updates) {
-    return this.updateEntity(id, updates);
+    eventEmitter(eventEmitter);
   }
 
   @POST
