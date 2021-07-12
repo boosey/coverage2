@@ -1,5 +1,5 @@
 package coverage.framework;
 
-public interface AssignRelationFunction {
+public interface FormRelationFunction {
   public String relation(EntitySuper parent, EntitySuper child);
 }

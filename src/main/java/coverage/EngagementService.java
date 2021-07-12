@@ -1,8 +1,8 @@
 package coverage;
 
-import coverage.framework.AssignRelationFunction;
-import coverage.framework.AssignTalentMixin;
-import coverage.framework.ServiceMixin;
+import coverage.framework.BaseServiceMixin;
+import coverage.framework.FormRelationFunction;
+import coverage.framework.FormRelationMixin;
 import coverage.framework.ServiceSuper;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
@@ -19,7 +19,8 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 @Path("/engagements")
 public class EngagementService
   extends ServiceSuper
-  implements ServiceMixin<Engagement>, AssignTalentMixin<Engagement, Talent> {
+  implements
+    BaseServiceMixin<Engagement>, FormRelationMixin<Engagement, Talent> {
 
   EngagementService(
     @Channel("engagement-event-emitter") Emitter<JsonObject> eventEmitter
@@ -39,7 +40,7 @@ public class EngagementService
     @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (engagement, talent) -> {
+    FormRelationFunction assign = (engagement, talent) -> {
       String prevId = ((Engagement) engagement).engagementManagerId;
       String newId = ((Talent) talent).id.toString();
       if (newId.equals(prevId)) {
@@ -65,7 +66,7 @@ public class EngagementService
     @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (engagement, talent) -> {
+    FormRelationFunction assign = (engagement, talent) -> {
       String prevId = ((Engagement) engagement).engagementLeaderId;
       String newId = ((Talent) talent).id.toString();
       if (newId.equals(prevId)) {
@@ -91,7 +92,7 @@ public class EngagementService
     @PathParam("engagementId") String engagementId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (engagement, talent) -> {
+    FormRelationFunction assign = (engagement, talent) -> {
       String newId = ((Talent) talent).id.toString();
 
       ((Engagement) engagement).assignTalent(newId);

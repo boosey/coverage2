@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
-public interface AssignTalentMixin<P extends EntitySuper, C extends EntitySuper> {
+public interface FormRelationMixin<P extends EntitySuper, C extends EntitySuper> {
   public Emitter<JsonObject> getEventEmitter();
 
   public Configuration getConfig();
@@ -17,7 +17,7 @@ public interface AssignTalentMixin<P extends EntitySuper, C extends EntitySuper>
   public default Uni<Response> assignTalent(
     Uni<Optional<P>> parentUni,
     Uni<Optional<C>> childUni,
-    AssignRelationFunction assign,
+    FormRelationFunction form,
     String assignedEventName,
     String unassignedEventName
   ) {
@@ -57,7 +57,7 @@ public interface AssignTalentMixin<P extends EntitySuper, C extends EntitySuper>
         tuple -> {
           P a = tuple.getItem1();
           C t = tuple.getItem2();
-          String prevId = assign.relation(a, t);
+          String prevId = form.relation(a, t);
           return Uni
             .combine()
             .all()

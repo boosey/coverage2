@@ -1,8 +1,8 @@
 package coverage;
 
-import coverage.framework.AssignRelationFunction;
-import coverage.framework.AssignTalentMixin;
-import coverage.framework.ServiceMixin;
+import coverage.framework.BaseServiceMixin;
+import coverage.framework.FormRelationFunction;
+import coverage.framework.FormRelationMixin;
 import coverage.framework.ServiceSuper;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
@@ -19,7 +19,7 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 @Path("/talent")
 public class TalentService
   extends ServiceSuper
-  implements ServiceMixin<Talent>, AssignTalentMixin<Talent, Talent> {
+  implements BaseServiceMixin<Talent>, FormRelationMixin<Talent, Talent> {
 
   TalentService(
     @Channel("talent-event-emitter") Emitter<JsonObject> eventEmitter
@@ -39,7 +39,7 @@ public class TalentService
     @PathParam("talentId") String talentId,
     @PathParam("managerId") String managerId
   ) {
-    AssignRelationFunction assign = (talent, manager) -> {
+    FormRelationFunction assign = (talent, manager) -> {
       String prevId = ((Talent) talent).managerId;
       String newId = ((Talent) manager).id.toString();
       if (newId.equals(prevId)) {

@@ -21,7 +21,7 @@ import org.bson.types.ObjectId;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 @ApplicationScoped
-public interface ServiceMixin<E extends EntitySuper> {
+public interface BaseServiceMixin<E extends EntitySuper> {
   public ListAllUniFunction getListAllUniFunction();
 
   public DeleteAllUniFunction getDeleteAllUniFunction();

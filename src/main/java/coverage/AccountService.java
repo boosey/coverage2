@@ -1,8 +1,8 @@
 package coverage;
 
-import coverage.framework.AssignRelationFunction;
-import coverage.framework.AssignTalentMixin;
-import coverage.framework.ServiceMixin;
+import coverage.framework.BaseServiceMixin;
+import coverage.framework.FormRelationFunction;
+import coverage.framework.FormRelationMixin;
 import coverage.framework.ServiceSuper;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
@@ -19,7 +19,7 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 @Path("/accounts")
 public class AccountService
   extends ServiceSuper
-  implements ServiceMixin<Account>, AssignTalentMixin<Account, Talent> {
+  implements BaseServiceMixin<Account>, FormRelationMixin<Account, Talent> {
 
   AccountService(
     @Channel("account-event-emitter") Emitter<JsonObject> eventEmitter
@@ -39,7 +39,7 @@ public class AccountService
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (account, talent) -> {
+    FormRelationFunction assign = (account, talent) -> {
       String prevId = ((Account) account).btcManagerId;
       String newId = ((Talent) talent).id.toString();
       if (newId.equals(prevId)) {
@@ -65,7 +65,7 @@ public class AccountService
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (account, talent) -> {
+    FormRelationFunction assign = (account, talent) -> {
       String prevId = ((Account) account).designManagerId;
       String newId = ((Talent) talent).id.toString();
       if (newId.equals(prevId)) {
@@ -91,7 +91,7 @@ public class AccountService
     @PathParam("accountId") String accountId,
     @PathParam("talentId") String talentId
   ) {
-    AssignRelationFunction assign = (account, talent) -> {
+    FormRelationFunction assign = (account, talent) -> {
       String prevId = ((Account) account).squadManagerId;
       String newId = ((Talent) talent).id.toString();
       if (newId.equals(prevId)) {

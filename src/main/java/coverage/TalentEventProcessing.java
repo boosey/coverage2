@@ -1,6 +1,6 @@
 package coverage;
 
-import coverage.framework.AssignRelationFunction;
+import coverage.framework.FormRelationFunction;
 import io.smallrye.mutiny.Uni;
 import io.smallrye.reactive.messaging.kafka.KafkaRecord;
 import io.vertx.core.json.JsonObject;
@@ -23,14 +23,14 @@ public class TalentEventProcessing {
   public Uni<Void> consumeAccountEvent(
     KafkaRecord<JsonObject, JsonObject> msg
   ) {
-    AssignRelationFunction assign = (talent, account) -> {
+    FormRelationFunction assign = (talent, account) -> {
       Talent t = (Talent) talent;
       Account a = (Account) account;
       t.assignAccount(a.id.toString());
       return null;
     };
 
-    AssignRelationFunction unassign = (talent, account) -> {
+    FormRelationFunction unassign = (talent, account) -> {
       Talent t = (Talent) talent;
       Account a = (Account) account;
       t.unassignAccount(a.id.toString());
@@ -77,7 +77,7 @@ public class TalentEventProcessing {
 
   public Uni<Void> processAccountTalentRelationshipChanged(
     KafkaRecord<JsonObject, JsonObject> msg,
-    AssignRelationFunction change
+    FormRelationFunction change
   ) {
     JsonObject p = msg.getPayload();
 
