@@ -1,5 +1,6 @@
 package coverage.framework;
 
+import coverage.Configuration;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
 import javax.enterprise.context.ApplicationScoped;
@@ -31,6 +32,8 @@ public interface ServiceMixin<E extends EntitySuper> {
 
   public Emitter<JsonObject> getEventEmitter();
 
+  public Configuration getConfig();
+
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   public default Uni<Response> list() {
@@ -45,10 +48,48 @@ public interface ServiceMixin<E extends EntitySuper> {
       );
   }
 
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("/{id}")
+  public default Uni<Response> findById(@PathParam("id") String id) {
+    return getFindByIdOptionalUniFunction()
+      .apply(new ObjectId(id))
+      .onItem()
+      .transform(
+        item -> {
+          if (item.isPresent()) {
+            return Response.ok().entity(item.get()).build();
+          } else {
+            return Response.status(Status.NOT_FOUND).build();
+          }
+        }
+      )
+      .onFailure()
+      .recoverWithItem(
+        err -> Response.status(Status.INTERNAL_SERVER_ERROR).entity(err).build()
+      );
+  }
+
   @POST
   public default Uni<Response> add(E entity, @Context UriInfo uriInfo) {
     return entity
       .persist()
+      .onItem()
+      .transformToUni(
+        e ->
+          Uni
+            .createFrom()
+            .completionStage(
+              getEventEmitter()
+                .send(
+                  new JsonObject()
+                  .put(
+                      getConfig().event().property().name(),
+                      getConfig().event().entityCreated()
+                    )
+                )
+            )
+      )
       .onItem()
       .transform(
         v ->
@@ -92,6 +133,22 @@ public interface ServiceMixin<E extends EntitySuper> {
         }
       )
       .onItem()
+      .transformToUni(
+        e ->
+          Uni
+            .createFrom()
+            .completionStage(
+              getEventEmitter()
+                .send(
+                  new JsonObject()
+                  .put(
+                      getConfig().event().property().name(),
+                      getConfig().event().entityUpdated()
+                    )
+                )
+            )
+      )
+      .onItem()
       .transform(v -> Response.ok().build())
       .onFailure(error -> error.getClass() == NotFoundException.class)
       .recoverWithItem(Response.status(Status.NOT_FOUND).build())
@@ -106,6 +163,22 @@ public interface ServiceMixin<E extends EntitySuper> {
     return getDeleteAllUniFunction()
       .apply()
       .onItem()
+      .transformToUni(
+        e ->
+          Uni
+            .createFrom()
+            .completionStage(
+              getEventEmitter()
+                .send(
+                  new JsonObject()
+                  .put(
+                      getConfig().event().property().name(),
+                      getConfig().event().entityDeletedAll()
+                    )
+                )
+            )
+      )
+      .onItem()
       .transform(count -> Response.ok().entity(count).build())
       .onFailure()
       .recoverWithItem(Response.status(Status.INTERNAL_SERVER_ERROR).build());
@@ -116,6 +189,24 @@ public interface ServiceMixin<E extends EntitySuper> {
   public default Uni<Response> deleteById(@PathParam("id") String id) {
     return getDeleteByIdUniFunction()
       .apply(new ObjectId(id))
+      .onItem()
+      .transformToUni(
+        succeeded ->
+          Uni
+            .createFrom()
+            .completionStage(
+              getEventEmitter()
+                .send(
+                  new JsonObject()
+                  .put(
+                      getConfig().event().property().name(),
+                      getConfig().event().entityDeleted()
+                    )
+                )
+            )
+            .onItem()
+            .transform(v -> succeeded)
+      )
       .onItem()
       .transform(
         succeeded -> {
@@ -128,27 +219,5 @@ public interface ServiceMixin<E extends EntitySuper> {
       )
       .onFailure()
       .recoverWithItem(Response.status(Status.INTERNAL_SERVER_ERROR).build());
-  }
-
-  @GET
-  @Produces(MediaType.APPLICATION_JSON)
-  @Path("/{id}")
-  public default Uni<Response> findById(@PathParam("id") String id) {
-    return getFindByIdOptionalUniFunction()
-      .apply(new ObjectId(id))
-      .onItem()
-      .transform(
-        item -> {
-          if (item.isPresent()) {
-            return Response.ok().entity(item.get()).build();
-          } else {
-            return Response.status(Status.NOT_FOUND).build();
-          }
-        }
-      )
-      .onFailure()
-      .recoverWithItem(
-        err -> Response.status(Status.INTERNAL_SERVER_ERROR).entity(err).build()
-      );
   }
 }

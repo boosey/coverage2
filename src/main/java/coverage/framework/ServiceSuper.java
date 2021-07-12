@@ -19,7 +19,7 @@ public class ServiceSuper {
   private DeleteAllUniFunction deleteAllUniFunction;
   private DeleteByIdUniFunction deleteByIdUniFunction;
 
-  private Emitter<JsonObject> emitter;
+  protected Emitter<JsonObject> emitter;
 
   public ServiceSuper(
     ListAllUniFunction listAllUniFunction,
@@ -55,5 +55,9 @@ public class ServiceSuper {
 
   public Emitter<JsonObject> getEventEmitter() {
     return emitter;
+  }
+
+  public Configuration getConfig() {
+    return config;
   }
 }

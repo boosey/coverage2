@@ -1,12 +1,12 @@
 package coverage;
 
 import coverage.framework.AssignRelationFunction;
-import coverage.framework.AssignTalent;
+import coverage.framework.AssignTalentMixin;
 import coverage.framework.ServiceMixin;
 import coverage.framework.ServiceSuper;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
-import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -15,23 +15,22 @@ import org.bson.types.ObjectId;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
+@Singleton
 @Path("/accounts")
 public class AccountService
   extends ServiceSuper
-  implements ServiceMixin<Account>, AssignTalent<Account, Talent> {
+  implements ServiceMixin<Account>, AssignTalentMixin<Account, Talent> {
 
-  @Inject
-  @Channel("account-event-emitter")
-  Emitter<JsonObject> eventEmitter;
-
-  AccountService() {
+  AccountService(
+    @Channel("account-event-emitter") Emitter<JsonObject> eventEmitter
+  ) {
     super(
       () -> Account.listAll(),
       id -> Account.findByIdOptional(id),
       () -> Account.deleteAll(),
       id -> Account.deleteById(id)
     );
-    eventEmitter(eventEmitter);
+    this.emitter = eventEmitter;
   }
 
   @POST
@@ -51,14 +50,12 @@ public class AccountService
       }
     };
 
-    return assignTalentMixin(
+    return assignTalent(
       Account.findByIdOptional(new ObjectId(accountId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
       config.event().accountBtcManagerAssigned(),
-      config.event().accountBtcManagerUnassigned(),
-      eventEmitter,
-      config
+      config.event().accountBtcManagerUnassigned()
     );
   }
 
@@ -79,14 +76,12 @@ public class AccountService
       }
     };
 
-    return assignTalentMixin(
+    return assignTalent(
       Account.findByIdOptional(new ObjectId(accountId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
       config.event().accountDesignManagerAssigned(),
-      config.event().accountDesignManagerUnassigned(),
-      eventEmitter,
-      config
+      config.event().accountDesignManagerUnassigned()
     );
   }
 
@@ -107,14 +102,12 @@ public class AccountService
       }
     };
 
-    return assignTalentMixin(
+    return assignTalent(
       Account.findByIdOptional(new ObjectId(accountId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
       config.event().accountSquadManagerAssigned(),
-      config.event().accountSquadManagerUnassigned(),
-      eventEmitter,
-      config
+      config.event().accountSquadManagerUnassigned()
     );
   }
 }

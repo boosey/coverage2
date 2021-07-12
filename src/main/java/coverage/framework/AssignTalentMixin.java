@@ -9,15 +9,17 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
-public interface AssignTalent<P extends EntitySuper, C extends EntitySuper> {
-  public default Uni<Response> assignTalentMixin(
+public interface AssignTalentMixin<P extends EntitySuper, C extends EntitySuper> {
+  public Emitter<JsonObject> getEventEmitter();
+
+  public Configuration getConfig();
+
+  public default Uni<Response> assignTalent(
     Uni<Optional<P>> parentUni,
     Uni<Optional<C>> childUni,
     AssignRelationFunction assign,
     String assignedEventName,
-    String unassignedEventName,
-    Emitter<JsonObject> eventEmitter,
-    Configuration config
+    String unassignedEventName
   ) {
     return Uni
       .combine()
@@ -74,12 +76,19 @@ public interface AssignTalent<P extends EntitySuper, C extends EntitySuper> {
           Uni<Void> assignedEvent = Uni
             .createFrom()
             .completionStage(
-              eventEmitter.send(
-                new JsonObject()
-                  .put(config.event().property().name(), assignedEventName)
-                  .put(config.event().property().parentId(), p.id)
-                  .put(config.event().property().talentId(), tuple.getItem2())
-              )
+              getEventEmitter()
+                .send(
+                  new JsonObject()
+                    .put(
+                      getConfig().event().property().name(),
+                      assignedEventName
+                    )
+                    .put(getConfig().event().property().parentId(), p.id)
+                    .put(
+                      getConfig().event().property().talentId(),
+                      tuple.getItem2()
+                    )
+                )
             );
 
           if (tuple.getItem3().isPresent()) {
@@ -87,12 +96,16 @@ public interface AssignTalent<P extends EntitySuper, C extends EntitySuper> {
             Uni<Void> unassignedEvent = Uni
               .createFrom()
               .completionStage(
-                eventEmitter.send(
-                  new JsonObject()
-                    .put(config.event().property().name(), unassignedEventName)
-                    .put(config.event().property().parentId(), p.id)
-                    .put(config.event().property().talentId(), prevId)
-                )
+                getEventEmitter()
+                  .send(
+                    new JsonObject()
+                      .put(
+                        getConfig().event().property().name(),
+                        unassignedEventName
+                      )
+                      .put(getConfig().event().property().parentId(), p.id)
+                      .put(getConfig().event().property().talentId(), prevId)
+                  )
               );
 
             return Uni.combine().all().unis(assignedEvent, unassignedEvent);

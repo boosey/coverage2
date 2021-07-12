@@ -1,12 +1,12 @@
 package coverage;
 
 import coverage.framework.AssignRelationFunction;
-import coverage.framework.AssignTalent;
+import coverage.framework.AssignTalentMixin;
 import coverage.framework.ServiceMixin;
 import coverage.framework.ServiceSuper;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
-import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -15,23 +15,22 @@ import org.bson.types.ObjectId;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
+@Singleton
 @Path("/talent")
 public class TalentService
   extends ServiceSuper
-  implements ServiceMixin<Talent>, AssignTalent<Talent, Talent> {
+  implements ServiceMixin<Talent>, AssignTalentMixin<Talent, Talent> {
 
-  @Inject
-  @Channel("talent-event-emitter")
-  Emitter<JsonObject> eventEmitter;
-
-  TalentService() {
+  TalentService(
+    @Channel("talent-event-emitter") Emitter<JsonObject> eventEmitter
+  ) {
     super(
       () -> Talent.listAll(),
       id -> Talent.findByIdOptional(id),
       () -> Talent.deleteAll(),
       id -> Talent.deleteById(id)
     );
-    eventEmitter(eventEmitter);
+    this.emitter = eventEmitter;
   }
 
   @POST
@@ -51,14 +50,12 @@ public class TalentService
       }
     };
 
-    return assignTalentMixin(
+    return assignTalent(
       Talent.findByIdOptional(new ObjectId(talentId)),
       Talent.findByIdOptional(new ObjectId(managerId)),
       assign,
       config.event().talentManagerAssigned(),
-      config.event().talentManagerUnassigned(),
-      eventEmitter,
-      config
+      config.event().talentManagerUnassigned()
     );
   }
 }

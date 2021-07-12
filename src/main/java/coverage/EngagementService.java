@@ -1,12 +1,12 @@
 package coverage;
 
 import coverage.framework.AssignRelationFunction;
-import coverage.framework.AssignTalent;
+import coverage.framework.AssignTalentMixin;
 import coverage.framework.ServiceMixin;
 import coverage.framework.ServiceSuper;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
-import javax.inject.Inject;
+import javax.inject.Singleton;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -15,23 +15,22 @@ import org.bson.types.ObjectId;
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
+@Singleton
 @Path("/engagements")
 public class EngagementService
   extends ServiceSuper
-  implements ServiceMixin<Engagement>, AssignTalent<Engagement, Talent> {
+  implements ServiceMixin<Engagement>, AssignTalentMixin<Engagement, Talent> {
 
-  @Inject
-  @Channel("engagement-event-emitter")
-  Emitter<JsonObject> eventEmitter;
-
-  EngagementService() {
+  EngagementService(
+    @Channel("engagement-event-emitter") Emitter<JsonObject> eventEmitter
+  ) {
     super(
       () -> Engagement.listAll(),
       id -> Engagement.findByIdOptional(id),
       () -> Engagement.deleteAll(),
       id -> Engagement.deleteById(id)
     );
-    eventEmitter(eventEmitter);
+    this.emitter = eventEmitter;
   }
 
   @POST
@@ -51,14 +50,12 @@ public class EngagementService
       }
     };
 
-    return assignTalentMixin(
+    return assignTalent(
       Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
       config.event().engagementManagerAssigned(),
-      config.event().engagementManagerUnassigned(),
-      eventEmitter,
-      config
+      config.event().engagementManagerUnassigned()
     );
   }
 
@@ -79,14 +76,12 @@ public class EngagementService
       }
     };
 
-    return assignTalentMixin(
+    return assignTalent(
       Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
       config.event().engagementLeaderAssigned(),
-      config.event().engagementLeaderUnassigned(),
-      eventEmitter,
-      config
+      config.event().engagementLeaderUnassigned()
     );
   }
 
@@ -103,14 +98,12 @@ public class EngagementService
       return null;
     };
 
-    return assignTalentMixin(
+    return assignTalent(
       Engagement.findByIdOptional(new ObjectId(engagementId)),
       Talent.findByIdOptional(new ObjectId(talentId)),
       assign,
       config.event().engagementTalentAssigned(),
-      config.event().engagementTalentUnassigned(),
-      eventEmitter,
-      config
+      config.event().engagementTalentUnassigned()
     );
   }
 }
