@@ -38,7 +38,6 @@ public class TalentEventProcessing {
       return null;
     };
 
-    log.info("processing account-event: " + msg.getTopic());
     JsonObject p = msg.getPayload();
     String event = p.getString(config.event().property().name());
     Set<String> talentAssignedEvents = Set.of(

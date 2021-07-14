@@ -17,6 +17,8 @@ public class Account extends EntitySuper {
   public String squadManagerId;
   public String designManagerId;
   public String btcManagerId;
+  public String ctl;
+  public String market;
 
   public <T extends EntityInterface> void updateFields(T updates) {
     Account a = (Account) updates;
@@ -28,6 +30,8 @@ public class Account extends EntitySuper {
     this.squadManagerId = a.squadManagerId;
     this.designManagerId = a.designManagerId;
     this.btcManagerId = a.btcManagerId;
+    this.ctl = a.ctl;
+    this.market = a.market;
     return;
   }
 }

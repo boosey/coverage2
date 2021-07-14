@@ -161,8 +161,6 @@ public class TalentTest {
       .statusCode(200)
       .body("name", equalTo(accountName));
 
-    log.info("GETTING ADDED ACCOUNT");
-
     String r = given()
       .when()
       .get(addedTalentURI)

@@ -6,9 +6,11 @@ import coverage.framework.functionalinterfaces.FindByIdOptionalUniFunction;
 import coverage.framework.functionalinterfaces.ListAllUniFunction;
 import io.smallrye.mutiny.Uni;
 import io.vertx.core.json.JsonObject;
+import java.util.stream.Collectors;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -76,7 +78,7 @@ public interface BaseServiceMixin<E extends EntitySuper> {
   @POST
   public default Uni<Response> add(E entity, @Context UriInfo uriInfo) {
     return entity
-      .persist()
+      .<EntitySuper>persist()
       .onItem()
       .transformToUni(
         e ->
@@ -86,10 +88,11 @@ public interface BaseServiceMixin<E extends EntitySuper> {
               getEventEmitter()
                 .send(
                   new JsonObject()
-                  .put(
+                    .put(
                       getConfig().event().property().name(),
                       getConfig().event().entityCreated()
                     )
+                    .put(getConfig().event().property().id(), e.id.toString())
                 )
             )
       )
@@ -144,16 +147,21 @@ public interface BaseServiceMixin<E extends EntitySuper> {
               getEventEmitter()
                 .send(
                   new JsonObject()
-                  .put(
+                    .put(
                       getConfig().event().property().name(),
                       getConfig().event().entityUpdated()
                     )
+                    .put(getConfig().event().property().id(), id)
                 )
             )
       )
       .onItem()
       .transform(v -> Response.ok().build())
-      .onFailure(error -> error.getClass() == NotFoundException.class)
+      .onFailure(
+        error -> {
+          return error.getClass() == NotFoundException.class;
+        }
+      )
       .recoverWithItem(Response.status(Status.NOT_FOUND).build())
       .onFailure()
       .recoverWithItem(
@@ -185,6 +193,81 @@ public interface BaseServiceMixin<E extends EntitySuper> {
       .transform(count -> Response.ok().entity(count).build())
       .onFailure()
       .recoverWithItem(Response.status(Status.INTERNAL_SERVER_ERROR).build());
+    // return getListAllUniFunction()
+    //   .apply()
+    //   .onItem()
+    //   .transform(
+    //     list -> {
+    //       return list
+    //         .stream()
+    //         .map(e -> e.id.toString())
+    //         .collect(Collectors.toSet());
+    //     }
+    //   )
+    //   .onItem()
+    //   .transformToUni(
+    //     idSet -> {
+    //       return Uni
+    //         .combine()
+    //         .all()
+    //         .unis(
+    //           Uni.createFrom().item(idSet),
+    //           getDeleteAllUniFunction().apply()
+    //         )
+    //         .asTuple();
+    //     }
+    //   )
+    //   .onItem()
+    //   .transformToUni(
+    //     tuple -> {
+    //       if (tuple.getItem1().size() == tuple.getItem2()) {
+    //         return Uni
+    //           .combine()
+    //           .all()
+    //           .unis(
+    //             tuple
+    //               .getItem1()
+    //               .stream()
+    //               .map(
+    //                 id -> {
+    //                   return Uni
+    //                     .createFrom()
+    //                     .completionStage(
+    //                       getEventEmitter()
+    //                         .send(
+    //                           new JsonObject()
+    //                             .put(
+    //                               getConfig().event().property().name(),
+    //                               getConfig().event().entityDeleted()
+    //                             )
+    //                             .put(getConfig().event().property().id(), id)
+    //                         )
+    //                     );
+    //                 }
+    //               )
+    //               .collect(Collectors.toSet())
+    //           )
+    //           .combinedWith(
+    //             emittedEventConfirmationList ->
+    //               emittedEventConfirmationList.size()
+    //           )
+    //           .onItem()
+    //           .transform(
+    //             count -> {
+    //               return Response.ok().entity(count).build();
+    //             }
+    //           )
+    //           .onFailure()
+    //           .recoverWithItem(
+    //             Response.status(Status.INTERNAL_SERVER_ERROR).build()
+    //           );
+    //       } else {
+    //         throw new InternalServerErrorException(
+    //           "Number of items doesn't match the deleted records"
+    //         );
+    //       }
+    //     }
+    //   );
   }
 
   @DELETE
@@ -201,10 +284,11 @@ public interface BaseServiceMixin<E extends EntitySuper> {
               getEventEmitter()
                 .send(
                   new JsonObject()
-                  .put(
+                    .put(
                       getConfig().event().property().name(),
                       getConfig().event().entityDeleted()
                     )
+                    .put(getConfig().event().property().id(), id)
                 )
             )
             .onItem()

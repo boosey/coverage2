@@ -53,6 +53,7 @@ public interface Configuration {
 
     public interface Property {
       String name();
+      String id();
       String parentId();
       String childId();
       String accountId();

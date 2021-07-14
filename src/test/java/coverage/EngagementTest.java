@@ -158,8 +158,6 @@ public class EngagementTest {
       .statusCode(200)
       .body("name", equalTo(name));
 
-    log.info("GETTING ADDED ACCOUNT");
-
     String r = given()
       .when()
       .get(addedEngagementURI)
