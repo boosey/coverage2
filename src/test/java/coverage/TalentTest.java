@@ -21,8 +21,8 @@ public class TalentTest {
 
   String exampleTalentJson() {
     return new JSONObject()
-      .put("firstname", talentName)
-      .put("lastname", talentName)
+      .put("firstName", talentName)
+      .put("lastName", talentName)
       .put("address", "Main St")
       .put("city", "Baton Rouge")
       .put("state", "LA")
@@ -57,7 +57,7 @@ public class TalentTest {
       .get(addedTalentURI)
       .then()
       .statusCode(200)
-      .body("firstname", equalTo(talentName));
+      .body("firstName", equalTo(talentName));
 
     given().when().delete("/talent").then().statusCode(200);
   }
@@ -160,7 +160,7 @@ public class TalentTest {
       .get(addedTalentURI)
       .then()
       .statusCode(200)
-      .body("firstname", equalTo(talentName));
+      .body("firstName", equalTo(talentName));
 
     String r = given()
       .when()
@@ -172,7 +172,7 @@ public class TalentTest {
       .asString();
 
     JSONObject j = new JSONObject(r);
-    j.put("name", newName);
+    j.put("firstName", newName);
     String a1 = j.toString();
 
     given()
@@ -188,7 +188,7 @@ public class TalentTest {
       .get(addedTalentURI)
       .then()
       .statusCode(200)
-      .body("firstname", equalTo(newName));
+      .body("firstName", equalTo(newName));
 
     given().when().delete("/talent").then().statusCode(200);
   }
