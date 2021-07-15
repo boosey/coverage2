@@ -1,0 +1,2123 @@
+[{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae6d"
+  },
+  "market": "Public",
+  "name": "STATE OF ARIZONA",
+  "city": "PHOENIX",
+  "state": "AZ",
+  "vp": "Courtney Bromley",
+  "icl": "Morgan Hulsey",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Steve Nowland"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae6e"
+  },
+  "market": "Public",
+  "name": "STATE OF ILLINOIS",
+  "city": "CHICAGO",
+  "state": "IL",
+  "vp": "Courtney Bromley",
+  "icl": "Frederic Brodie",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae6f"
+  },
+  "market": "Public",
+  "name": "STATE OF MICHIGAN",
+  "city": "LANSING",
+  "state": "MI",
+  "vp": "Courtney Bromley",
+  "icl": "Tracy Baij",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Steve Samoranski "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae70"
+  },
+  "market": "Public",
+  "name": "STATE OF MINNESOTA",
+  "city": "ST PAUL",
+  "state": "MN",
+  "vp": "Courtney Bromley",
+  "icl": "Matthew Bailey",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Joe Crisp - Start 4/14"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae71"
+  },
+  "market": "Public",
+  "name": "STATE OF MISSOURI",
+  "city": "JEFFERSON CY",
+  "state": "MO",
+  "vp": "Courtney Bromley",
+  "icl": "David Clements",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Ryan Huneidi"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae72"
+  },
+  "market": "Public",
+  "name": "STATE OF OHIO",
+  "city": "COLUMBUS",
+  "state": "OH",
+  "vp": "Courtney Bromley",
+  "icl": "Jennifer Buckles",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Ramona Anton"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae73"
+  },
+  "market": "Public",
+  "name": "STATE OF OREGON",
+  "city": "SALEM",
+  "state": "OR",
+  "vp": "Courtney Bromley",
+  "icl": "Claire Lambrecht",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae74"
+  },
+  "market": "Public",
+  "name": "STATE OF TEXAS",
+  "city": "AUSTIN",
+  "state": "TX",
+  "vp": "Courtney Bromley",
+  "icl": "Darryl Williams",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Sai Bezawada"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae75"
+  },
+  "market": "Public",
+  "name": "STATE OF WASHINGTON",
+  "city": "OLYMPIA",
+  "state": "WA",
+  "vp": "Courtney Bromley",
+  "icl": "Nkosi Harvey",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae76"
+  },
+  "market": "Public",
+  "name": "STATE OF CALIFORNIA",
+  "city": "SACRAMENTO",
+  "state": "CA",
+  "vp": "Todd Bacon",
+  "icl": "Todd Bacon",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Jan Gravesen"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae77"
+  },
+  "market": "Financial Services",
+  "name": "TRUIST",
+  "city": "WILSON",
+  "state": "NC",
+  "vp": "Sergio Amoni",
+  "icl": "Eric Lorch, (open)",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Kim Abney"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae78"
+  },
+  "market": "Financial Services",
+  "name": "AMERIPRISE FINANCIAL INC",
+  "city": "MINNEAPOLIS",
+  "state": "MN",
+  "vp": "Sergio Amoni",
+  "icl": "Sharon Stratton",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Saurabh Pradhan - start 4/1"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae79"
+  },
+  "market": "Financial Services",
+  "name": "DISCOVER FINANCIAL SERVICES",
+  "city": "RIVERWOODS",
+  "state": "IL",
+  "vp": "Sergio Amoni",
+  "icl": "Martin Crotty",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "John Vondrachek"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae7a"
+  },
+  "market": "Financial Services",
+  "name": "FIFTH THIRD BANCORP",
+  "city": "CINCINNATI",
+  "state": "OH",
+  "vp": "Sergio Amoni",
+  "icl": "Abhi Venugopal",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Ed Corno"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae7b"
+  },
+  "market": "Financial Services",
+  "name": "KEY EQUIPMENT FINANCE",
+  "city": "CLEVELAND",
+  "state": "OH",
+  "vp": "Sergio Amoni",
+  "icl": "Trevor Pearson/Austin/IBM",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Bala Ramachandran"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae7c"
+  },
+  "market": "Financial Services",
+  "name": "PNC FINANCIAL SERVICES GROUP",
+  "city": "PITTSBURGH",
+  "state": "PA",
+  "vp": "Sergio Amoni",
+  "icl": "Steven Andresen",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Sheyda Saponar"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae7d"
+  },
+  "market": "Financial Services",
+  "name": "PRINCIPAL FINANCIAL GROUP INC.",
+  "city": "DES MOINES",
+  "state": "IA",
+  "vp": "Sergio Amoni",
+  "icl": "Kevin Puk",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Melinda West"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae7e"
+  },
+  "market": "Financial Services",
+  "name": "THE HUNTINGTON NATIONAL BANK",
+  "city": "COLUMBUS",
+  "state": "OH",
+  "vp": "Sergio Amoni",
+  "icl": "Joseph P Clark",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Scott Dybiec"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae7f"
+  },
+  "market": "Financial Services",
+  "name": "US BANCORP",
+  "city": "MINNEAPOLIS",
+  "state": "MN",
+  "vp": "Sergio Amoni",
+  "icl": "Philip Abraham",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Guy Perera"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae80"
+  },
+  "market": "Financial Services",
+  "name": "CHARLES SCHWAB CORPORATION",
+  "city": "SAN FRANCISCO",
+  "state": "CA",
+  "vp": "Sergio Amoni",
+  "icl": "Gord O'Donnell",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Jay Arbabha"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae81"
+  },
+  "market": "Financial Services",
+  "name": "ALIGHT SOLUTIONS LLC",
+  "city": "LINCOLNSHIRE",
+  "state": "IL",
+  "vp": "Sergio Amoni",
+  "icl": "Dave Edington",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Kamal Dhawan"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae82"
+  },
+  "market": "Financial Services",
+  "name": "COMERICA INC.",
+  "city": "AUBURN HILLS",
+  "state": "MI",
+  "vp": "Sergio Amoni",
+  "icl": "Daniel McCarthy",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Tim Baeten"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae83"
+  },
+  "market": "Financial Services",
+  "name": "EBAY INC",
+  "city": "SAN JOSE",
+  "state": "CA",
+  "vp": "Sergio Amoni",
+  "icl": "Andrea Eichhorn",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Paulo Palacios"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae84"
+  },
+  "market": "Financial Services",
+  "name": "GLOBAL PAYMENTS INC",
+  "city": "COLUMBUS",
+  "state": "GA",
+  "vp": "Sergio Amoni",
+  "icl": "Brett Uldrich, Harrison Smith",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Liya Ma"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae85"
+  },
+  "market": "Financial Services",
+  "name": "NORTHERN TRUST",
+  "city": "NAPERVILLE",
+  "state": "IL",
+  "vp": "Sergio Amoni",
+  "icl": "James A Marrano",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Al Hamid (acting)"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae86"
+  },
+  "market": "Financial Services",
+  "name": "PAYPAL",
+  "city": "SAN JOSE",
+  "state": "CA",
+  "vp": "Sergio Amoni",
+  "icl": "Ben Duddleston",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Steve Wagner"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae87"
+  },
+  "market": "Financial Services",
+  "name": "REGIONS",
+  "city": "HOOVER",
+  "state": "AL",
+  "vp": "Sergio Amoni",
+  "icl": "Leigh Jordan",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Mahesh Dodani "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae88"
+  },
+  "market": "Financial Services",
+  "name": "STANCORP FINANCIAL",
+  "city": "PORTLAND",
+  "state": "OR",
+  "vp": "Sergio Amoni",
+  "icl": "Francis Tonyan",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Mike Smith"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae89"
+  },
+  "market": "Financial Services",
+  "name": "VISA",
+  "city": "SAN FRANCISCO",
+  "state": "CA",
+  "vp": "Sergio Amoni",
+  "icl": "Doug Shigaki, O'Neil Hopson",
+  "ctlmanager": "Rose Brandolino",
+  "ctl": "Adrian Papacica"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae8a"
+  },
+  "market": "Public",
+  "name": "HUMANA INC",
+  "city": "LOUISVILLE",
+  "state": "KY",
+  "vp": "Ben Blackwell",
+  "icl": "Benjamin Blackwell",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae8b"
+  },
+  "market": "Public",
+  "name": "UNITEDHEALTH GROUP",
+  "city": "ELK RIVER",
+  "state": "MN",
+  "vp": "Jen Viens",
+  "icl": "Ron Watson",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Adam Stanley"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae8c"
+  },
+  "market": "Public",
+  "name": "ABBOTT LABORATORIES",
+  "city": "ABBOTT PARK",
+  "state": "IL",
+  "vp": "Jen Viens",
+  "icl": "Brandon Smith",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae8d"
+  },
+  "market": "Public",
+  "name": "ABBVIE",
+  "city": "NORTH CHICAGO",
+  "state": "IL",
+  "vp": "Jen Viens",
+  "icl": "William Max",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Cynthia Gaddis"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae8e"
+  },
+  "market": "Public",
+  "name": "CERNER CORP",
+  "city": "N KANSAS CITY",
+  "state": "MO",
+  "vp": "Jen Viens",
+  "icl": "Jordan Hawyard ",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Greg Beneteau"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae8f"
+  },
+  "market": "Public",
+  "name": "ELI LILLY",
+  "city": "INDIANAPOLIS",
+  "state": "IN",
+  "vp": "Jen Viens",
+  "icl": "James Cich",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae90"
+  },
+  "market": "Public",
+  "name": "HEALTH CARE SERVICES CORP",
+  "city": "CHICAGO",
+  "state": "IL",
+  "vp": "Jen Viens",
+  "icl": "Patty Winton",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Jordin Olin "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae91"
+  },
+  "market": "Public",
+  "name": "ANTHEM",
+  "city": "INDIANAPOLIS",
+  "state": "IN",
+  "vp": "Kurt Anderson",
+  "icl": "Kurt Anderson",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Carlin Smith"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae92"
+  },
+  "market": "Distribution",
+  "name": "UPS",
+  "city": "Atlanta",
+  "state": "GA",
+  "vp": "Raju Kattady",
+  "icl": "Mike Segler",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "James Pope"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae93"
+  },
+  "market": "Distribution",
+  "name": "CSX (SEALAND)",
+  "city": "JACKSONVILLE",
+  "state": "FL",
+  "vp": "Raju Kattady",
+  "icl": "Angela Chapman",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Rathnakar (Raj) Gopisetty"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae94"
+  },
+  "market": "Distribution",
+  "name": "DELTA AIRLINES",
+  "city": "HAPEVILLE",
+  "state": "GA",
+  "vp": "Raju Kattady",
+  "icl": "Brian O'Rourke",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Prabs Attaluri"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae95"
+  },
+  "market": "Distribution",
+  "name": "HERTZ CORPORATION",
+  "city": "ESTERO",
+  "state": "FL",
+  "vp": "Raju Kattady",
+  "icl": "Chris Foster",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Jeff Moyer"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae96"
+  },
+  "market": "Distribution",
+  "name": "MARRIOTT INTERNATIONAL INC.",
+  "city": "BETHESDA",
+  "state": "MD",
+  "vp": "Raju Kattady",
+  "icl": "Jonathan Thwaites",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Alan Booth"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae97"
+  },
+  "market": "Distribution",
+  "name": "NORFOLK SOUTHERN CORPORATION",
+  "city": "ATLANTA",
+  "state": "GA",
+  "vp": "Raju Kattady",
+  "icl": "Ned Blodgett",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "PRASHANT BHARDWAJ"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae98"
+  },
+  "market": "Distribution",
+  "name": "COCA-COLA",
+  "city": "ATLANTA",
+  "state": "GA",
+  "vp": "Stephen Brown",
+  "icl": "Steve Brown",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Marnix Gillis"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae99"
+  },
+  "market": "Distribution",
+  "name": "AHOLD DELHAIZE",
+  "city": "QUINCY",
+  "state": "MA",
+  "vp": "Todd Kathan",
+  "icl": "Justin Bier ",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "OPEN "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae9a"
+  },
+  "market": "Distribution",
+  "name": "ALTRIA GROUP",
+  "city": "RICHMOND",
+  "state": "VA",
+  "vp": "Todd Kathan",
+  "icl": "Kevin Dunn",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Ashish Shukla"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae9b"
+  },
+  "market": "Distribution",
+  "name": "AMERISOURCE BERGEN CORPORATION",
+  "city": "CHESTERBROOK",
+  "state": "PA",
+  "vp": "Todd Kathan",
+  "icl": "Deidre Cushwa",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Sreeni Pamidala "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae9c"
+  },
+  "market": "Distribution",
+  "name": "HOME DEPOT",
+  "city": "ATLANTA",
+  "state": "GA",
+  "vp": "Todd Kathan",
+  "icl": "Wendy Earon",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Alain Neyroud"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae9d"
+  },
+  "market": "Distribution",
+  "name": "LOWES",
+  "city": "MOORESVILLE",
+  "state": "NC",
+  "vp": "Todd Kathan",
+  "icl": "Lacey Firestone",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "OPEN"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae9e"
+  },
+  "market": "Distribution",
+  "name": "THE ESTEE LAUDER COMPANIES INC",
+  "city": "MELVILLE",
+  "state": "NY",
+  "vp": "Todd Kathan",
+  "icl": "Jesse Moon",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Brandon C Jones"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63bae9f"
+  },
+  "market": "Financial Services",
+  "name": "UNITED SERVICES AUTO ASSOC",
+  "city": "SAN ANTONIO",
+  "state": "TX",
+  "vp": "Dave Archie",
+  "icl": "Dave Archie",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "OPEN"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea0"
+  },
+  "market": "Financial Services",
+  "name": "WELLS FARGO",
+  "city": "SAN FRANCISCO",
+  "state": "CA",
+  "vp": "Gary Lancaster",
+  "icl": "Gary Lancaster",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Michael Dircz"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea1"
+  },
+  "market": "Financial Services",
+  "name": "STATE FARM",
+  "city": "BLOOMINGTON",
+  "state": "IL",
+  "vp": "Crystal Johnson",
+  "icl": "Chrystal Johnson",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Bob Dill"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea2"
+  },
+  "market": "Financial Services",
+  "name": "ALLSTATE INSURANCE COMPANY",
+  "city": "NORTHBROOK",
+  "state": "IL",
+  "vp": "Diane Paulenich",
+  "icl": "John Jones",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Jason Antonitis"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea3"
+  },
+  "market": "Financial Services",
+  "name": "NORTHWESTERN MUTUAL LIFE INS",
+  "city": "MILWAUKEE",
+  "state": "WI",
+  "vp": "Diane Paulenich",
+  "icl": "Mike Navarro",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Dale Smith"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea4"
+  },
+  "market": "Financial Services",
+  "name": "PROGRESSIVE CORP",
+  "city": "MAYFIELD VLG",
+  "state": "OH",
+  "vp": "Diane Paulenich",
+  "icl": "Jason Dagelewicz",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Tom Blaies"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea5"
+  },
+  "market": "Financial Services",
+  "name": "METLIFE",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Kristin Silva",
+  "icl": "Kristin Kirtley Silva",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Sridhar Iyengar"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea6"
+  },
+  "market": "Financial Services",
+  "name": "GEICO",
+  "city": "CHEVY CHASE",
+  "state": "MD",
+  "vp": "Brian Costabile",
+  "icl": "Brian Costabile",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Barbara Yeh"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea7"
+  },
+  "market": "Financial Services",
+  "name": "AEGON INC",
+  "city": "BALTIMORE",
+  "state": "MD",
+  "vp": "Diane Paulenich",
+  "icl": "Jim Barclay",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Ramesh Seshadri  "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea8"
+  },
+  "market": "Financial Services",
+  "name": "AMERICAN INTL GROUP",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Diane Paulenich",
+  "icl": "Jane Washington",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Tom Carey"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baea9"
+  },
+  "market": "Financial Services",
+  "name": "CHUBB & SON",
+  "city": "WARREN",
+  "state": "NJ",
+  "vp": "Diane Paulenich",
+  "icl": "Fred Lyons, Kevin O'Reilly",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Don Canning"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeaa"
+  },
+  "market": "Financial Services",
+  "name": "LIBERTY MUTUAL INSURANCE CO",
+  "city": "PORTSMOUTH",
+  "state": "NH",
+  "vp": "Diane Paulenich",
+  "icl": "Wendy Simoncelli",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Chris Wildgoose "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeab"
+  },
+  "market": "Financial Services",
+  "name": "NEW YORK LIFE INSURANCE COMPANY",
+  "city": "LEBANON",
+  "state": "NJ",
+  "vp": "Diane Paulenich",
+  "icl": "Dan Ehrlich",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Matthew Broomhall"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeac"
+  },
+  "market": "Financial Services",
+  "name": "PRUDENTIAL FINANCIAL",
+  "city": "Newark",
+  "state": "NJ",
+  "vp": "Diane Paulenich",
+  "icl": "Doug LaMere",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "Jim Doyle"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baead"
+  },
+  "market": "Financial Services",
+  "name": "THE TRAVELERS INDEMNITY COMPANY",
+  "city": "HARTFORD",
+  "state": "CT",
+  "vp": "Diane Paulenich",
+  "icl": "Doug Seyfried",
+  "ctlmanager": "Rochello Lostumbo",
+  "ctl": "John Kimball"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeae"
+  },
+  "market": "Comms",
+  "name": "COMCAST CORP",
+  "city": "PHILADELPHIA",
+  "state": "PA",
+  "vp": "Janet Snowdon",
+  "icl": "Luis Delahoz",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Thomas Kennedy "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeaf"
+  },
+  "market": "Comms",
+  "name": "COX ENTERPRISE INC.",
+  "city": "ATLANTA",
+  "state": "GA",
+  "vp": "Janet Snowdon",
+  "icl": "Jennifer Long",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "James Reese"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb0"
+  },
+  "market": "Comms",
+  "name": "THOMSON REUTERS",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Janet Snowdon",
+  "icl": "Lawrence DeVoe",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Siddhartha Basu"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb1"
+  },
+  "market": "Comms",
+  "name": "WPP GROUP INC.",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Janet Snowdon",
+  "icl": "Steve Ehrlich",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Francis Poeta"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb2"
+  },
+  "market": "Comms",
+  "name": "VERIZON",
+  "city": "BASKING RIDGE",
+  "state": "NY",
+  "vp": "Richard Patterson",
+  "icl": "Tim O'Shea",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Praduemn Goyal"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb3"
+  },
+  "market": "Comms",
+  "name": "Sprint / T-Mobile",
+  "city": "OVERLAND PARK",
+  "state": "KS",
+  "vp": "Roger Hasson",
+  "icl": "Dawn Babb",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Kim Foster"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb4"
+  },
+  "market": "Comms",
+  "name": "DUKE ENERGY",
+  "city": "CHARLOTTE",
+  "state": "NC",
+  "vp": "Pete Ingrasci",
+  "icl": "Tom Batthany",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Clayton Walters"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb5"
+  },
+  "market": "Comms",
+  "name": "FLORIDA POWER & LIGHT GROUP",
+  "city": "MIAMI",
+  "state": "FL",
+  "vp": "Pete Ingrasci",
+  "icl": "Luis Amadeo",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Joe Sapp"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb6"
+  },
+  "market": "Comms",
+  "name": "NATIONAL GRID TRANSCO PLC",
+  "city": "WALTHAM",
+  "state": "MA",
+  "vp": "Pete Ingrasci",
+  "icl": "Carrie Patti Murray",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Jennifer McComas"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb7"
+  },
+  "market": "Comms",
+  "name": "TECO ENERGY INC",
+  "city": "TAMPA",
+  "state": "FL",
+  "vp": "Pete Ingrasci",
+  "icl": "Kevin Jones",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Sanchayan Das"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb8"
+  },
+  "market": "Public",
+  "name": "BLUE CROSS BLUE SHIELD OF MASSACHUSETTES",
+  "city": "BOSTON",
+  "state": "MA",
+  "vp": "Jen Viens",
+  "icl": "Jim Holderby",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Deepak Mohapatra "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeb9"
+  },
+  "market": "Public",
+  "name": "BLUE CROSS OF FLORIDA",
+  "city": "ORANGE PARK",
+  "state": "FL",
+  "vp": "Jen Viens",
+  "icl": "Randall Brown",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeba"
+  },
+  "market": "Public",
+  "name": "BLUE CROSS OF SOUTH CAROLINA",
+  "city": "COLUMBIA",
+  "state": "SC",
+  "vp": "Jen Viens",
+  "icl": "Michael Marsalis Jr",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Kenneth Crum"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baebb"
+  },
+  "market": "Public",
+  "name": "CAREFIRST",
+  "city": "COLUMBIA",
+  "state": "MD",
+  "vp": "Jen Viens",
+  "icl": "Lisa Poremski",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baebc"
+  },
+  "market": "Public",
+  "name": "CIGNA",
+  "city": "WINDSOR",
+  "state": "CT",
+  "vp": "Jen Viens",
+  "icl": "Laura Massetti ",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Eric Leonard  (??)"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baebd"
+  },
+  "market": "Public",
+  "name": "HIGHMARK INC",
+  "city": "HARRISBURG",
+  "state": "PA",
+  "vp": "Jen Viens",
+  "icl": "Michael Levendusky",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Joseph Plezniak"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baebe"
+  },
+  "market": "Public",
+  "name": "HORIZON HEALTHCARE SERVICES",
+  "city": "NEWARK",
+  "state": "NJ",
+  "vp": "Jen Viens",
+  "icl": "Thomas Gormeley",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Justyna Nowak"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baebf"
+  },
+  "market": "Public",
+  "name": "NASCO",
+  "city": "Atlanta",
+  "state": "GA",
+  "vp": "Jen Viens",
+  "icl": "Marines Franceschi",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Wes Hewatt"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec0"
+  },
+  "market": "Public",
+  "name": "CVS HEALTH CORPORATION",
+  "city": "WOONSOCKET",
+  "state": "RI",
+  "vp": "Laurie Tropiano",
+  "icl": "Laurie Tropiano",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Ramesh Gangisetty"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec1"
+  },
+  "market": "Public",
+  "name": "JOHNSON & JOHNSON",
+  "city": "RARITAN",
+  "state": "NJ",
+  "vp": "Michael Ricci",
+  "icl": "Mike Ricci",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Partha Anbil"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec2"
+  },
+  "market": "Federal",
+  "name": "Environmental & Aviation",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Courtney Bromley",
+  "icl": "Joseph Grossnickel",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Tim Fries"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec3"
+  },
+  "market": "Federal",
+  "name": "General Government Services",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Courtney Bromley",
+  "icl": "Julie Hunter",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Lee Angelelli"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec4"
+  },
+  "market": "Federal",
+  "name": "Labor & Commerce",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Courtney Bromley",
+  "icl": "Juanice Campbell",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Harmeet Singh"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec5"
+  },
+  "market": "Federal",
+  "name": "Medic & Health & Human Svcs",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Courtney Bromley",
+  "icl": "Philomena Fritz",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Prithvi Rao"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec6"
+  },
+  "market": "Federal",
+  "name": "SSA",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Courtney Bromley",
+  "icl": "Arti Arthur",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Steven Katz"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec7"
+  },
+  "market": "Federal",
+  "name": "Treasury & IRS",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Courtney Bromley",
+  "icl": "John Brody",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Steve Margolis"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec8"
+  },
+  "market": "Federal",
+  "name": "Army & Air Force",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Ray Spicer",
+  "icl": "William Shaw",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Marc Wangel"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baec9"
+  },
+  "market": "Federal",
+  "name": "Federal SI",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Ray Spicer",
+  "icl": "Jean White  ",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Jeff Tennenbaum"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeca"
+  },
+  "market": "Federal",
+  "name": "Homeland Security",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Ray Spicer",
+  "ctlmanager": "Victor Brown",
+  "ctl": "John DiCarlo"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baecb"
+  },
+  "market": "Federal",
+  "name": "Intelligence",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Ray Spicer",
+  "icl": "Geoffrey Working",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Gabe Chang"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baecc"
+  },
+  "market": "Federal",
+  "name": "Navy & Marine Corps",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Ray Spicer",
+  "icl": "Jay Magnino",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Ashu Gupta"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baecd"
+  },
+  "market": "Federal",
+  "name": "State & Justice Departments",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Ray Spicer",
+  "icl": "Daniel Pedowitz",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Michael Flores"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baece"
+  },
+  "market": "Federal",
+  "name": "Veteran Affairs & DoD Medical",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Ray Spicer",
+  "icl": "Katie Webb",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Eric Zhang"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baecf"
+  },
+  "market": "Public",
+  "name": "COMMONWEALTH OF PENNSYLVANIA",
+  "city": "HARRISBURG",
+  "state": "PA",
+  "vp": "Courtney Bromley",
+  "icl": "Dom Cottone",
+  "ctlmanager": "Victor Brown",
+  "ctl": "SCOTT D. OPALEWSKI"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed0"
+  },
+  "market": "Public",
+  "name": "STATE OF FLORIDA",
+  "city": "TALLAHASSEE",
+  "state": "FL",
+  "vp": "Courtney Bromley",
+  "icl": "Clint Thornton",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Ravi Subramaniam"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed1"
+  },
+  "market": "Public",
+  "name": "STATE OF GEORGIA",
+  "city": "ALPHARETTA",
+  "state": "GA",
+  "vp": "Courtney Bromley",
+  "icl": "Leanne Lapp",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Jason Cannon  "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed2"
+  },
+  "market": "Public",
+  "name": "STATE OF NEW JERSEY",
+  "city": "TRENTON",
+  "state": "NJ",
+  "vp": "Courtney Bromley",
+  "icl": "Chris Bradley",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Brian Carroll"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed3"
+  },
+  "market": "Public",
+  "name": "STATE OF NORTH CAROLINA",
+  "city": "RESRCH TRI PK",
+  "state": "NC",
+  "vp": "Courtney Bromley",
+  "icl": "Mark Molinaro",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Jyoti Chawla "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed4"
+  },
+  "market": "Public",
+  "name": "STATE OF SOUTH CAROLINA",
+  "city": "GREENVILLE",
+  "state": "SC",
+  "vp": "Courtney Bromley",
+  "icl": "Deborah Weems",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Dave Crute"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed5"
+  },
+  "market": "Public",
+  "name": "MERCK & CO INC",
+  "city": "KENILWORTH",
+  "state": "NJ",
+  "vp": "Jen Viens",
+  "icl": "John Meyer",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Piyush Singhal"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed6"
+  },
+  "market": "Public",
+  "name": "PFIZER",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Mike Errity",
+  "icl": "Mike Errity",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Neeraj Nargund"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed7"
+  },
+  "market": "Public",
+  "name": "STATE OF NEW YORK",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Vanessa Hunt",
+  "icl": "Vanessa Hunt",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Nicholas Perillo"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed8"
+  },
+  "market": "Distribution",
+  "name": "PEPSICO (PEPSI-COLA INTL)",
+  "city": "PLANO",
+  "state": "TX",
+  "vp": "Andres Aviles",
+  "icl": "Andres Aviles",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Hitesh Khanna"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baed9"
+  },
+  "market": "Distribution",
+  "name": "WALMART",
+  "city": "BENTONVILLE",
+  "state": "AR",
+  "vp": "Chris Townsend",
+  "icl": "Chris Townsend",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Kevin Hall"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeda"
+  },
+  "market": "Distribution",
+  "name": "WALGREENS BOOTS ALLIANCE.",
+  "city": "DEERFIELD",
+  "state": "IL",
+  "vp": "Claudia Brind-Woody",
+  "icl": "Claudia Brind-Woody",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "GARETH MITCHELL-JONES "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baedb"
+  },
+  "market": "Distribution",
+  "name": "ANIXTER (ITEL CORP)",
+  "city": "GLENVIEW",
+  "state": "IL",
+  "vp": "Todd Kathan",
+  "icl": "Brandon Bunn",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Chandhubabu Thathineni"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baedc"
+  },
+  "market": "Distribution",
+  "name": "CARDINAL HEALTH CORPORATION",
+  "city": "DUBLIN",
+  "state": "OH",
+  "vp": "Todd Kathan",
+  "icl": "Open",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Chad Jodon"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baedd"
+  },
+  "market": "Distribution",
+  "name": "COSTCO",
+  "city": "E WENATCHEE",
+  "state": "WA",
+  "vp": "Todd Kathan",
+  "icl": "Heidi Auvil",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Gerard De Lapelin Dumont "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baede"
+  },
+  "market": "Distribution",
+  "name": "KROGER / FRED MEYER",
+  "city": "CINCINNATI",
+  "state": "OH",
+  "vp": "Todd Kathan",
+  "icl": "Richard Martin",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Brian Witterstaetter"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baedf"
+  },
+  "market": "Distribution",
+  "name": "MEIJER INC",
+  "city": "GRAND RAPIDS",
+  "state": "MI",
+  "vp": "Todd Kathan",
+  "icl": "Catherine Przybysz",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Chris Stout"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee0"
+  },
+  "market": "Distribution",
+  "name": "NIKE",
+  "city": "BEAVERTON",
+  "state": "OR",
+  "vp": "Todd Kathan",
+  "icl": "Mike Alexandru",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Helen Lam"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee1"
+  },
+  "market": "Distribution",
+  "name": "SYSCO CORPORATION",
+  "city": "HOUSTON",
+  "state": "TX",
+  "vp": "Todd Kathan",
+  "icl": "Alex Saucedo",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Brian McElroy"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee2"
+  },
+  "market": "Distribution",
+  "name": "AMERICAN AIRLINES INC.",
+  "city": "FORT WORTH",
+  "state": "TX",
+  "vp": "Raju Kattady",
+  "icl": "Margo Keeler",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Greg Fitzpatrick "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee3"
+  },
+  "market": "Distribution",
+  "name": "BERKSHIRE HATHAWAY  - BNSF",
+  "city": "FORT WORTH",
+  "state": "TX",
+  "vp": "Raju Kattady",
+  "icl": "Will Waller",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Mike Bishop"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee4"
+  },
+  "market": "Distribution",
+  "name": "FEDERAL EXPRESS",
+  "city": "MEMPHIS",
+  "state": "TN",
+  "vp": "Raju Kattady",
+  "icl": "Katharine Sutter",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Brad DesAulniers"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee5"
+  },
+  "market": "Distribution",
+  "name": "UNITED AIR LINES INC",
+  "city": "CHICAGO",
+  "state": "IL",
+  "vp": "Raju Kattady",
+  "icl": "Brian Clifford",
+  "ctlmanager": "Oliver Birch",
+  "ctl": "Thirumal Nellutla  - April 1 Start"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee6"
+  },
+  "market": "Public",
+  "name": "BCBS OF TN INC",
+  "city": "CHATTANOOGA",
+  "state": "TN",
+  "vp": "Jen Viens",
+  "icl": "Carter Young",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Joe Noonan"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee7"
+  },
+  "market": "Public",
+  "name": "BLUE CROSS BLUE SHIELD OF AL",
+  "city": "HOOVER",
+  "state": "AL",
+  "vp": "Jen Viens",
+  "icl": "Steve Samowich ",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee8"
+  },
+  "market": "Public",
+  "name": "PROVIDENCE HOSPITALS",
+  "city": "RENTON",
+  "state": "WA",
+  "vp": "Jen Viens",
+  "icl": "Anna Edmonds",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Cheong Ang"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baee9"
+  },
+  "market": "Public",
+  "name": "KAISER PERMANENTE HEALTH",
+  "city": "PASADENA",
+  "state": "CA",
+  "vp": "Matt Masseur",
+  "icl": "Matt Masseur",
+  "ctlmanager": "Victor Brown",
+  "ctl": "OPEN (Ryan Hodgin Acting)"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeea"
+  },
+  "market": "Public",
+  "name": "The CLEVELAND CLINIC",
+  "city": "CLEVELAND",
+  "state": "OH",
+  "vp": "Rich Varos",
+  "icl": "Richard Varos",
+  "ctlmanager": "Victor Brown",
+  "ctl": "Rob Witte"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeeb"
+  },
+  "market": "Comms",
+  "name": "AT&T",
+  "city": "DALLAS",
+  "state": "TX",
+  "vp": "Cameron Art",
+  "icl": "Tony Shaw",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Malcolm Nicholas "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeec"
+  },
+  "market": "Comms",
+  "name": "CHARTER COMMUNICATIONS INC",
+  "city": "DENVER",
+  "state": "CO",
+  "vp": "Janet Snowdon",
+  "icl": "Curtis Begley",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Steve Trigg"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeed"
+  },
+  "market": "Comms",
+  "name": "DISH",
+  "city": "DeNVER",
+  "state": "CO",
+  "vp": "Janet Snowdon",
+  "icl": "Tim Depalma",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Tom Viviano"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeee"
+  },
+  "market": "Comms",
+  "name": "GOOGLE INC",
+  "city": "SAN JOSE",
+  "state": "CA",
+  "vp": "Janet Snowdon",
+  "icl": "Christine Nishimoto",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Effron Esseiva"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeef"
+  },
+  "market": "Comms",
+  "name": "CENTURYLINK/LUMEN TECHNOLOGIES",
+  "city": "BOULDER",
+  "state": "CO",
+  "vp": "Janet Snowdon",
+  "icl": "Curtis Begley",
+  "ctlmanager": "Peter Guglielmino",
+  "ctl": "Matt Davis"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef0"
+  },
+  "market": "Comms",
+  "name": "AMERICAN ELECTRIC POWER",
+  "city": "COLUMBUS",
+  "state": "OH",
+  "vp": "Pete Ingrasci",
+  "icl": "Choquette Guiney",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Larry Chalupsky"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef1"
+  },
+  "market": "Comms",
+  "name": "CENTERPOINT ENERGY INC",
+  "city": "HOUSTON",
+  "state": "TX",
+  "vp": "Pete Ingrasci",
+  "icl": "Jori Thomas",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Gunther Schulze"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef2"
+  },
+  "market": "Comms",
+  "name": "ENTERGY CORPORATION",
+  "city": "NEW ORLEANS",
+  "state": "LA",
+  "vp": "Pete Ingrasci",
+  "icl": "Vickie Dorris",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Zack Fogelman"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef3"
+  },
+  "market": "Comms",
+  "name": "SEMPRA ENERGY",
+  "city": "LOS ANGELES",
+  "state": "CA",
+  "vp": "Pete Ingrasci",
+  "icl": "Grant Smith",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Rebekah Eggers"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef4"
+  },
+  "market": "Comms",
+  "name": "XCEL ENERGY",
+  "city": "DENVER",
+  "state": "CO",
+  "vp": "Pete Ingrasci",
+  "icl": "Mark Weltzien",
+  "ctlmanager": "Rebekkah Eggers",
+  "ctl": "Mark Metheny"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef5"
+  },
+  "market": "Industrial",
+  "name": "CATERPILLAR INC.",
+  "city": "EAST PEORIA",
+  "state": "IL",
+  "vp": "Danny Murdock",
+  "icl": "Brent Sesselmann",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Dominic Farrar"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef6"
+  },
+  "market": "Industrial",
+  "name": "DAIMLER AG",
+  "city": "Charlotte",
+  "state": "NC",
+  "vp": "Danny Murdock",
+  "icl": "Ravi Nagar",
+  "ctlmanager": "Joy McConville",
+  "ctl": "William Sherrin"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef7"
+  },
+  "market": "Industrial",
+  "name": "DOW CHEMICAL",
+  "city": "MIDLAND",
+  "state": "MI",
+  "vp": "Danny Murdock",
+  "icl": "Tim Dery",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Jason Jackson"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef8"
+  },
+  "market": "Industrial",
+  "name": "EXXON MOBIL CORPORATION",
+  "city": "SPRING",
+  "state": "TX",
+  "vp": "Danny Murdock",
+  "icl": "Dennis Hendon",
+  "ctlmanager": "Joy McConville",
+  "ctl": "John Clarke"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baef9"
+  },
+  "market": "Industrial",
+  "name": "FCA CNHI",
+  "city": "AUBURN HILLS",
+  "state": "MI",
+  "vp": "Danny Murdock",
+  "icl": "Saeed Kazi",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Steven Greene"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baefa"
+  },
+  "market": "Industrial",
+  "name": "HONDA MOTOR",
+  "city": "INDIANAPOLIS",
+  "state": "IN",
+  "vp": "Danny Murdock",
+  "icl": "Jeff Schlageter",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Jay Di Silvestri"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baefb"
+  },
+  "market": "Industrial",
+  "name": "MEDTRONIC",
+  "city": "MOUNDS VIEW",
+  "state": "MN",
+  "vp": "Danny Murdock",
+  "icl": "Kelli Millette",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Prashant Bhatnagar"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baefc"
+  },
+  "market": "Industrial",
+  "name": "SCHLUMBERGER",
+  "city": "SUGAR LAND",
+  "state": "TX",
+  "vp": "Danny Murdock",
+  "icl": "Gil Molinar",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Wladmir Frazao "
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baefd"
+  },
+  "market": "Industrial",
+  "name": "THE BOEING COMPANY",
+  "city": "BELLEVUE",
+  "state": "WA",
+  "vp": "Danny Murdock",
+  "icl": "Suzanne Rutkowski",
+  "ctlmanager": "Joy McConville",
+  "ctl": "John Lin"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baefe"
+  },
+  "market": "Industrial",
+  "name": "TOYOTA MOTOR CORPORATION",
+  "city": "PLANO",
+  "state": "TX",
+  "vp": "Danny Murdock",
+  "icl": "Tyler Mons",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Brad Kennedy"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baeff"
+  },
+  "market": "Industrial",
+  "name": "GENERAL MOTORS",
+  "city": "DETROIT",
+  "state": "MI",
+  "vp": "Dave Mancl",
+  "icl": "Dave Mancl",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Indran Naick"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf00"
+  },
+  "market": "Industrial",
+  "name": "CISCO SYSTEMS INC",
+  "city": "SAN JOSE",
+  "state": "CA",
+  "vp": "Mariels Winhoffer",
+  "icl": "Mariels Winhoffer",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Dan Wedge"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf01"
+  },
+  "market": "Industrial",
+  "name": "Ford",
+  "vp": "Paige Cornwall",
+  "icl": "Paige Cornwell",
+  "ctlmanager": "Joy McConville",
+  "ctl": "Chris Kolde"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf02"
+  },
+  "market": "Financial Services",
+  "name": "FISERV",
+  "city": "NORCROSS",
+  "state": "GA",
+  "vp": "Gary Napolitano",
+  "icl": "Gary Napolitano",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Sharon Fortune\n"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf03"
+  },
+  "market": "Financial Services",
+  "name": "NAVY FEDERAL CREDIT UNION",
+  "city": "VIENNA",
+  "state": "VA",
+  "vp": "Janet Lewis",
+  "icl": "Otis Jones, Kevin Courtney",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Prem Rangwani"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf04"
+  },
+  "market": "Financial Services",
+  "name": "BANK OF AMERICA",
+  "city": "CHARLOTTE",
+  "state": "NC",
+  "vp": "Curt Leeman",
+  "icl": "Curt Leeman",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Jorge Diaz"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf05"
+  },
+  "market": "Financial Services",
+  "name": "BROADRIDGE FINANCIAL SOLUTIONS",
+  "city": "LAKE SUCCESS",
+  "state": "NY",
+  "vp": "Janet Lewis",
+  "icl": "Collen Edwards",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Claudia Schroedl"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf06"
+  },
+  "market": "Financial Services",
+  "name": "MARKEL CORPORATION",
+  "city": "GLEN ALLEN",
+  "state": "VA",
+  "vp": "Janet Lewis",
+  "icl": "Terence O'neill",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Michael Reddock"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf07"
+  },
+  "market": "Financial Services",
+  "name": "US FEDERAL RESERVE BOARD",
+  "city": "WASHINGTON",
+  "state": "DC",
+  "vp": "Janet Lewis",
+  "icl": "Richard Vaden",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Roman Pinis"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf08"
+  },
+  "market": "Financial Services",
+  "name": "MORGAN STANLEY",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Greg Kreindler",
+  "icl": "Greg Kreindler",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Kwang S Kang"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf09"
+  },
+  "market": "Financial Services",
+  "name": "AMERICAN EXPRESS",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Piet Bil",
+  "icl": "Piet Bil",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Anshu Kak"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf0a"
+  },
+  "market": "Financial Services",
+  "name": "FIDELITY",
+  "city": "BOSTON",
+  "state": "MA",
+  "vp": "Janet Lewis",
+  "icl": "Jimmy Mauney",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Paul Iasiello"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf0b"
+  },
+  "market": "Financial Services",
+  "name": "AUTOMATIC DATA PROCESSING",
+  "city": "ROSELAND",
+  "state": "NJ",
+  "vp": "Janet Lewis",
+  "icl": "Sherri Coverdale, Lindsay (Smith) Chesterman",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Fan Lu"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf0c"
+  },
+  "market": "Financial Services",
+  "name": "GOLDMAN SACHS GROUP, INC",
+  "city": "JERSEY CITY",
+  "state": "NJ",
+  "vp": "Janet Lewis",
+  "icl": "Danny Lee",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Jim Ryan"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf0d"
+  },
+  "market": "Financial Services",
+  "name": "OHIO FARMERS INSURANCE INC",
+  "city": "WESTFIELD CTR",
+  "state": "OH",
+  "vp": "Janet Lewis",
+  "icl": "Dawn Fennel",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Kathryn McAvoy"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf0e"
+  },
+  "market": "Financial Services",
+  "name": "THE VANGUARD GROUP INC",
+  "city": "WAYNE",
+  "state": "PA",
+  "vp": "Janet Lewis",
+  "icl": "Pratap Kesarkar",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Ed Batewell"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf0f"
+  },
+  "market": "Financial Services",
+  "name": "CITIGROUP",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Riccardo Forlenza",
+  "icl": "Riccardo Forlenza",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Fritz Von Bulow"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf10"
+  },
+  "market": "Financial Services",
+  "name": "STATE STREET CORPORATION",
+  "city": "BOSTON",
+  "state": "MA",
+  "vp": "Bridget Karlin",
+  "icl": "Bridget Karlin",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Eric Andersen"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf11"
+  },
+  "market": "Financial Services",
+  "name": "THE BANK OF NEW YORK MELLON CORPORATION",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Janet Lewis",
+  "icl": "Daniel Urbas, Stewart Szydlo",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Geri Atwood"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf12"
+  },
+  "market": "Financial Services",
+  "name": "CITIZENS BANK N A",
+  "city": "RIVERSIDE",
+  "state": "RI",
+  "vp": "Janet Lewis",
+  "icl": "Kishore Gupte",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Brad Barton"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf13"
+  },
+  "market": "Financial Services",
+  "name": "DEPOSITORY TRUST & CLEARING",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Janet Lewis",
+  "icl": "Eleonora Sokolsky",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "John Pecora"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf14"
+  },
+  "market": "Financial Services",
+  "name": "GRUPO SANTANDER",
+  "city": "DORCHESTER",
+  "state": "MA",
+  "vp": "Janet Lewis",
+  "icl": "Sanjay Patel",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Mohan Nagarajan"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf15"
+  },
+  "market": "Financial Services",
+  "name": "MITSUBISHI UFJ FINANCIAL GROUP (MUFG)",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Janet Lewis",
+  "icl": "Joe Costello",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Tolga Oral"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf16"
+  },
+  "market": "Financial Services",
+  "name": "JPMORGAN CHASE & CO.",
+  "city": "NEW YORK",
+  "state": "NY",
+  "vp": "Monica Martens",
+  "icl": "Monica Martins",
+  "ctlmanager": "Bridgid McDermott",
+  "ctl": "Choong Thio"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf17"
+  },
+  "market": "Financial Services",
+  "name": "BLACK KNIGHT INC",
+  "city": "JACKSONVILLE",
+  "state": "FL",
+  "vp": "Janet Lewis",
+  "icl": "Javier Freixa",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Khwaja Shaik"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf18"
+  },
+  "market": "Financial Services",
+  "name": "FIS - FIDELITY INFO SERVICES",
+  "city": "JACKSONVILLE",
+  "state": "FL",
+  "vp": "Janet Lewis",
+  "icl": "Kathrine Wall",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Dore Teichman"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf19"
+  },
+  "market": "Financial Services",
+  "name": "MASTERCARD INTERNATIONAL",
+  "city": "Purchase",
+  "state": "NY",
+  "vp": "Janet Lewis",
+  "icl": "Charles Kreitler, Robbie Sacco",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Kelly Lee"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf1a"
+  },
+  "market": "Financial Services",
+  "name": "PRIMERICA FINANCIAL SERVICES INC",
+  "city": "DULUTH",
+  "state": "GA",
+  "vp": "Janet Lewis",
+  "icl": "Justin Campbell",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Ken Sidney"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf1b"
+  },
+  "market": "Financial Services",
+  "name": "STATE EMPLOYEES CREDIT UNION",
+  "city": "RALEIGH",
+  "state": "NC",
+  "vp": "Janet Lewis",
+  "icl": "Pam Shelton",
+  "ctlmanager": "Phil Evangelista",
+  "ctl": "Greg Ackerman"
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf1c"
+  }
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf1d"
+  }
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf1e"
+  }
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf1f"
+  }
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf20"
+  }
+},{
+  "_id": {
+    "$oid": "60ef95daeb92d5c0c63baf21"
+  },
+  "city": " "
+}]
