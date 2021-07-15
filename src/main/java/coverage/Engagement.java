@@ -3,13 +3,20 @@ package coverage;
 import coverage.framework.EntityInterface;
 import coverage.framework.EntitySuper;
 import java.util.Set;
+import org.bson.codecs.pojo.annotations.BsonProperty;
 
 public class Engagement extends EntitySuper {
 
   public String name;
   public String description;
+
+  @BsonProperty("engagementmanagerid")
   public String engagementManagerId;
+
+  @BsonProperty("engagementleaderid")
   public String engagementLeaderId;
+
+  @BsonProperty("talentids")
   public Set<String> talentIds = Set.of();
 
   public <T extends EntityInterface> void updateFields(T updates) {
