@@ -32,7 +32,7 @@ public class AccountsTest {
 
   String exampleTalentJson() {
     return new JSONObject()
-      .put("name", accountName)
+      .put("firstname", accountName)
       .put("address", "Main St")
       .put("city", "Baton Rouge")
       .put("state", "LA")
@@ -40,12 +40,14 @@ public class AccountsTest {
       .toString();
   }
 
-  void deleteAllAccounts() {
+  public void deleteAllAccounts() {
     given().when().delete("/accounts").then().statusCode(200);
+    return;
   }
 
-  void deleteAllTalent() {
+  public void deleteAllTalent() {
     given().when().delete("/talent").then().statusCode(200);
+    return;
   }
 
   String addResource(String uri, String json) {
@@ -86,18 +88,17 @@ public class AccountsTest {
 
   @Test
   public void testAccountAddAndDeleteAll() {
-    deleteAllAccounts();
-
+    // deleteAllAccounts();
+    // given().when().delete("/accounts").then().statusCode(200);
     String addedAccountURI = addResource("/accounts", exampleAccountJson());
-
     getResource(addedAccountURI).body("name", equalTo(accountName));
-
+    // given().when().delete("/accounts").then().statusCode(200);
     deleteAllAccounts();
   }
 
   @Test
   public void getAccount() {
-    deleteAllAccounts();
+    // deleteAllAccounts();
 
     addResource("/accounts", exampleAccountJson());
 
@@ -110,7 +111,7 @@ public class AccountsTest {
 
   @Test
   public void failOnBadAccountId() {
-    deleteAllAccounts();
+    // deleteAllAccounts();
 
     getResourceWithPathParam(
       "/accounts/{id}",
@@ -122,7 +123,7 @@ public class AccountsTest {
 
   @Test
   public void testDeleteAccount() {
-    deleteAllAccounts();
+    // deleteAllAccounts();
 
     addResource("/accounts", exampleAccountJson());
 
@@ -135,7 +136,7 @@ public class AccountsTest {
 
   @Test
   public void testUpdateAccount() {
-    deleteAllAccounts();
+    // deleteAllAccounts();
 
     String addedAccountURI = addResource("/accounts", exampleAccountJson());
 
@@ -162,8 +163,8 @@ public class AccountsTest {
 
   @Test
   public void testAssignManagers() {
-    deleteAllAccounts();
-    deleteAllTalent();
+    // deleteAllAccounts();
+    // deleteAllTalent();
 
     String addedAccountURI = addResource("/accounts", exampleAccountJson());
 

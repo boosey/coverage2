@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import javax.enterprise.context.ApplicationScoped;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -24,9 +23,12 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 import org.bson.types.ObjectId;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
+import org.jboss.logging.Logger;
 
 @ApplicationScoped
 public interface BaseServiceMixin<E extends EntitySuper> {
+  Logger log = Logger.getLogger(BaseServiceMixin.class);
+
   public ListAllUniFunction getListAllUniFunction();
 
   public DeleteAllUniFunction getDeleteAllUniFunction();
@@ -171,103 +173,106 @@ public interface BaseServiceMixin<E extends EntitySuper> {
 
   @DELETE
   public default Uni<Response> delete() {
-    return getDeleteAllUniFunction()
-      .apply()
-      .onItem()
-      .transformToUni(
-        e ->
-          Uni
-            .createFrom()
-            .completionStage(
-              getEventEmitter()
-                .send(
-                  new JsonObject()
-                  .put(
-                      getConfig().event().property().name(),
-                      getConfig().event().entityDeletedAll()
-                    )
-                )
-            )
-      )
-      .onItem()
-      .transform(count -> Response.ok().entity(count).build())
-      .onFailure()
-      .recoverWithItem(Response.status(Status.INTERNAL_SERVER_ERROR).build());
-    // return getListAllUniFunction()
+    // return getDeleteAllUniFunction()
     //   .apply()
     //   .onItem()
-    //   .transform(
-    //     list -> {
-    //       return list
-    //         .stream()
-    //         .map(e -> e.id.toString())
-    //         .collect(Collectors.toSet());
-    //     }
-    //   )
-    //   .onItem()
-    //   .transformToUni(
-    //     idSet -> {
-    //       return Uni
-    //         .combine()
-    //         .all()
-    //         .unis(
-    //           Uni.createFrom().item(idSet),
-    //           getDeleteAllUniFunction().apply()
+    //   .invoke(
+    //     count ->
+    //       Uni
+    //         .createFrom()
+    //         .completionStage(
+    //           getEventEmitter()
+    //             .send(
+    //               new JsonObject()
+    //               .put(
+    //                   getConfig().event().property().name(),
+    //                   getConfig().event().entityDeletedAll()
+    //                 )
+    //             )
     //         )
-    //         .asTuple();
-    //     }
     //   )
     //   .onItem()
-    //   .transformToUni(
-    //     tuple -> {
-    //       if (tuple.getItem1().size() == tuple.getItem2()) {
-    //         return Uni
-    //           .combine()
-    //           .all()
-    //           .unis(
-    //             tuple
-    //               .getItem1()
-    //               .stream()
-    //               .map(
-    //                 id -> {
-    //                   return Uni
-    //                     .createFrom()
-    //                     .completionStage(
-    //                       getEventEmitter()
-    //                         .send(
-    //                           new JsonObject()
-    //                             .put(
-    //                               getConfig().event().property().name(),
-    //                               getConfig().event().entityDeleted()
-    //                             )
-    //                             .put(getConfig().event().property().id(), id)
-    //                         )
-    //                     );
-    //                 }
-    //               )
-    //               .collect(Collectors.toSet())
-    //           )
-    //           .combinedWith(
-    //             emittedEventConfirmationList ->
-    //               emittedEventConfirmationList.size()
-    //           )
-    //           .onItem()
-    //           .transform(
-    //             count -> {
-    //               return Response.ok().entity(count).build();
-    //             }
-    //           )
-    //           .onFailure()
-    //           .recoverWithItem(
-    //             Response.status(Status.INTERNAL_SERVER_ERROR).build()
-    //           );
-    //       } else {
-    //         throw new InternalServerErrorException(
-    //           "Number of items doesn't match the deleted records"
-    //         );
-    //       }
-    //     }
-    //   );
+    //   .transform(count -> Response.ok().entity(count).build())
+    //   .onFailure()
+    //   .recoverWithItem(Response.status(Status.INTERNAL_SERVER_ERROR).build());
+    return getListAllUniFunction()
+      .apply()
+      .onItem()
+      .invoke(
+        list -> {
+          if (list.size() <= 0) {
+            throw new NotFoundException();
+          }
+        }
+      )
+      .onItem()
+      .transform(
+        list -> {
+          return list
+            .stream()
+            .map(e -> e.id.toString())
+            .collect(Collectors.toSet());
+        }
+      )
+      .onItem()
+      .transformToUni(
+        idSet -> {
+          return Uni
+            .combine()
+            .all()
+            .unis(
+              Uni.createFrom().item(idSet),
+              getDeleteAllUniFunction().apply()
+            )
+            .asTuple();
+        }
+      )
+      .onItem()
+      .transformToUni(
+        tuple -> {
+          return Uni
+            .combine()
+            .all()
+            .unis(
+              tuple
+                .getItem1()
+                .stream()
+                .map(
+                  id -> {
+                    return Uni
+                      .createFrom()
+                      .completionStage(
+                        getEventEmitter()
+                          .send(
+                            new JsonObject()
+                              .put(
+                                getConfig().event().property().name(),
+                                getConfig().event().entityDeleted()
+                              )
+                              .put(getConfig().event().property().id(), id)
+                          )
+                      );
+                  }
+                )
+                .collect(Collectors.toSet())
+            )
+            .combinedWith(
+              emittedEventConfirmationList ->
+                emittedEventConfirmationList.size()
+            )
+            .onItem()
+            .transform(
+              count -> {
+                log.info("Returning response from deleteAll");
+                return Response.ok().entity(count).build();
+              }
+            );
+        }
+      )
+      .onFailure(error -> error.getClass() == NotFoundException.class)
+      .recoverWithItem(Response.ok().entity(0).build())
+      .onFailure()
+      .recoverWithItem(Response.status(Status.INTERNAL_SERVER_ERROR).build());
   }
 
   @DELETE

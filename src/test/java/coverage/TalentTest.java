@@ -16,12 +16,13 @@ public class TalentTest {
   @Inject
   Logger log;
 
-  final String accountName = "Test Talent";
+  final String talentName = "Test Talent";
   final String newName = "New Talent Name";
 
   String exampleTalentJson() {
     return new JSONObject()
-      .put("name", accountName)
+      .put("firstname", talentName)
+      .put("lastname", talentName)
       .put("address", "Main St")
       .put("city", "Baton Rouge")
       .put("state", "LA")
@@ -56,7 +57,7 @@ public class TalentTest {
       .get(addedTalentURI)
       .then()
       .statusCode(200)
-      .body("name", equalTo(accountName));
+      .body("firstname", equalTo(talentName));
 
     given().when().delete("/talent").then().statusCode(200);
   }
@@ -159,7 +160,7 @@ public class TalentTest {
       .get(addedTalentURI)
       .then()
       .statusCode(200)
-      .body("name", equalTo(accountName));
+      .body("firstname", equalTo(talentName));
 
     String r = given()
       .when()
@@ -187,7 +188,7 @@ public class TalentTest {
       .get(addedTalentURI)
       .then()
       .statusCode(200)
-      .body("name", equalTo(newName));
+      .body("firstname", equalTo(newName));
 
     given().when().delete("/talent").then().statusCode(200);
   }
