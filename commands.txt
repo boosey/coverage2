@@ -1,6 +1,7 @@
-mongod --dbpath ~/mongodata/db 
-zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties 
-kafka-server-start /usr/local/etc/kafka/server.properties
+ttab -q mongod --dbpath ~/mongodata/db &&
+ttab -q zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties &&
+sleep 3 &&
+ttab -q kafka-server-start /usr/local/etc/kafka/server.properties
 
 
 

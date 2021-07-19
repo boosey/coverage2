@@ -2,12 +2,12 @@ package coverage;
 
 public enum TalentRole {
   SquadManager,
-  BTCManager,
+  BtcManager,
   DesignManager,
   CloudEngineer,
   SolutionArchitect,
   DataScientist,
-  SRE,
+  SystemReliabilityEngineer,
   DevOps,
   DataEngineer,
 }

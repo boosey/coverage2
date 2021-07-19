@@ -20,6 +20,11 @@ public class Talent extends EntitySuper {
   public String country;
   public TalentRole role;
 
+  @BsonProperty("countrycode")
+  public String countryCode;
+
+  public String serial;
+
   @BsonProperty("managerid")
   public String managerId;
 
@@ -35,9 +40,11 @@ public class Talent extends EntitySuper {
     this.state = a.state;
     this.zip = a.zip;
     this.country = a.country;
-    this.role = a.role;
     this.managerId = a.managerId;
     this.accountIds = Set.copyOf(a.accountIds);
+    this.role = a.role;
+    this.countryCode = a.countryCode;
+    this.serial = a.serial;
     return;
   }
 
